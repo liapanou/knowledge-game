@@ -2,6 +2,7 @@ import { CardGame } from "@/components/CardGame";
 import Head from "next/head";
 import { useCountdown } from "usehooks-ts";
 import { clsx } from "clsx";
+import { useState } from "react";
 
 export default function Home() {
   const [count, { startCountdown, stopCountdown, resetCountdown }] =
@@ -9,10 +10,13 @@ export default function Home() {
       countStart: 100,
       intervalMs: 1000,
     });
+
+  const [flips, setFlips] = useState<number>(0);
+
   return (
     <div
       onClick={startCountdown}
-      className=" bg-blue-600 overflow-hidden w-screen h-screen"
+      className=" bg-blue-800 overflow-hidden w-screen h-screen"
     >
       <Head>
         <title>Memory Game</title>
@@ -42,10 +46,10 @@ export default function Home() {
             </div>
 
             <h2 className="text-3xl text-yellow-200 font-bold ml-auto">
-              Flips :
+              Flips : {flips}
             </h2>
           </div>
-          <CardGame />
+          <CardGame flips={flips} setFlips={() => setFlips(flips + 1)} />
         </div>
       </div>
     </div>

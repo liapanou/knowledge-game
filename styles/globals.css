@@ -131,3 +131,9 @@ a {
   height : 160px;
   
 }
+
+.card-front {
+  background-image: url("https://images.pexels.com/photos/247502/pexels-photo-247502.jpeg?auto=compress&cs=tinysrgb&w=1600");
+  width: 144px ;
+  height : 160px;
+}
