@@ -11,7 +11,8 @@ export default function Home() {
       intervalMs: 1000,
     });
 
-  const [flips, setFlips] = useState<number>(0);
+  const [flips, setFlips] = useState<number>(1);
+  const [score, setScore] = useState<number>(0);
 
   return (
     <div
@@ -24,34 +25,77 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="flex justify-center items-center  py-14">
-        <div>
-          <h1 className="text-7xl text-orange-600 font-extrabold mb-16 text-center">
-            Memory Game 🧠
-          </h1>
-          <div className="flex mb-4">
+
+      {count === 0 ||
+      score === 8 ||
+      (count === 0 && score === 8) ||
+      flips > 16 ? (
+        <div
+          onAnimationStart={stopCountdown}
+          className="flex justify-center items-center py-80"
+        >
+          <div>
+            <h1
+              className={clsx(
+                "text-9xl  uppercase text-red-700 font-extrabold mb-16 text-center blink",
+                { "text-yellow-500": score >= 5 && flips <= 15 }
+              )}
+            >
+              {score >= 5 && flips <= 15 ? "You win 🏆" : "Game Over"}
+            </h1>
             <div
               className={clsx(
-                "flex gap-4 font-bold",
+                "text-5xl text-red-700  font-extrabold text-center  ",
                 {
-                  "text-yellow-200 text-3xl": count >= 10,
-                },
-                {
-                  "text-red-700 text-5xl blink": count < 10,
+                  "text-yellow-500": score >= 5 && flips <= 15,
                 }
               )}
             >
-              <h2>Time :</h2>
-              <div>{count}</div>
+              <h2 className="mb-4"> Score : {score} </h2>
+              <h2 className="mb-4"> Flips : {flips - 1}</h2>
+              <h2>Time : {count}</h2>
             </div>
-
-            <h2 className="text-3xl text-yellow-200 font-bold ml-auto">
-              Flips : {flips}
-            </h2>
           </div>
-          <CardGame flips={flips} setFlips={() => setFlips(flips + 1)} />
         </div>
-      </div>
+      ) : (
+        <div className="flex justify-center items-center  py-14">
+          <div>
+            <h1 className="text-7xl text-orange-600 font-extrabold mb-16 text-center">
+              Memory Game 🧠
+            </h1>
+            <div className="grid grid-cols-3  mb-4">
+              <div
+                className={clsx(
+                  "flex gap-4 font-bold ",
+                  {
+                    "text-yellow-200 text-3xl": count >= 10,
+                  },
+                  {
+                    "text-red-700 text-5xl blink": count < 10,
+                  }
+                )}
+              >
+                <h2>Time :</h2>
+                <div>{count}</div>
+              </div>
+
+              <h2 className="text-3xl text-yellow-200 font-bold text-center">
+                Score : {score}
+              </h2>
+
+              <h2 className="text-3xl text-yellow-200 font-bold ml-auto">
+                Flips : {flips - 1}
+              </h2>
+            </div>
+            <CardGame
+              flips={flips}
+              setFlips={() => setFlips(flips + 1)}
+              score={score}
+              setScore={() => setScore(score + 1)}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
