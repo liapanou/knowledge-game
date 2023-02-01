@@ -5,6 +5,8 @@ type ContextType = {
   muted: boolean;
   level: Lvl;
   time?: number;
+  flips: number;
+  scores: number;
   setMute: (muted: boolean) => void;
   setLevel: (level: Lvl) => void;
 };
@@ -13,6 +15,8 @@ const defaultValue: ContextType = {
   muted: true,
   level: "easy",
   time: undefined,
+  flips: 0,
+  scores: 0,
   setMute: (muted: boolean) => {},
   setLevel: (level: Lvl) => {},
 };
@@ -32,10 +36,12 @@ export function SettingsProvider(props: { children: ReactNode }) {
 
   function setLevel(level: Lvl) {
     let time = 600;
-    if (level === "easy") time = 100;
-    if (level === "medium") time = 60;
-    if (level === "hard") time = 50;
-    setState({ ...state, level, time });
+    let flips = 40;
+    let scores = 6;
+    if (level === "easy") (time = 100), (flips = 50), (scores = 3);
+    if (level === "medium") (time = 60), (flips = 40), (scores = 5);
+    if (level === "hard") (time = 40), (flips = 30), (scores = 6);
+    setState({ ...state, level, time, flips, scores });
   }
 
   return (

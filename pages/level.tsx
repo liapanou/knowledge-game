@@ -3,7 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-export default function Home() {
+export default function Level() {
   const router = useRouter();
   const level = router.query.level as string;
   const settings = useSettings();
@@ -16,35 +16,33 @@ export default function Home() {
       <div className="bg-gradient-to-r bg-teal-400 w-screen min-h-screen h-full">
         <main className="p-8">
           <h1 className="text-5xl text-shadow text-yellow-300 font-extrabold text-center">
-            Memory Game 🧠
+            Select Level
           </h1>
           <hr className="my-8 opacity-40"></hr>
           <div className="w-full mt-20 grid gap-4  place-items-center container mx-auto grid-cols-1">
             <Link
               role="button"
               className="w-1/2 text-shadow  bg-gradient-to-tl bg-teal-300 text-center flex justify-center items-center h-20 text-yellow-50 rounded-md transform transition text-lg duration-100 hover:text-yellow-300 font-bold shadow-lg"
-              href="/level"
+              href={`/game?level=easy`}
+              onClick={() => settings.setLevel("easy")}
             >
-              <>
-                <div className="mr-4">▶️</div>
-                <div>Start Game</div>
-              </>
+              <button>Easy</button>
             </Link>
-            <button
-              onClick={() => {
-                settings.setMute(!settings.muted);
-              }}
-              className="w-1/2 text-shadow  bg-gradient-to-tl bg-teal-300  text-center flex justify-center items-center h-20 text-yellow-50 rounded-md transform transition text-lg duration-100 hover:text-yellow-300 font-bold shadow-lg"
-            >
-              <div className="mr-4">🎵</div>
-              <div>{mute ? "Audio on" : "Audio off"}</div>
-            </button>
             <Link
               role="button"
-              className="w-1/2 text-shadow  bg-gradient-to-tl bg-teal-300 text-center flex justify-center items-center h-20 text-yellow-50 rounded-md transform transition text-lg duration-100 hover:text-yellow-300 font-bold shadow-lg"
-              href="#"
+              className="w-1/2 text-shadow  bg-gradient-to-tl bg-teal-300  text-center flex justify-center items-center h-20 text-yellow-50 rounded-md transform transition text-lg duration-100 hover:text-yellow-300 font-bold shadow-lg"
+              href={`/game?level=medium`}
+              onClick={() => settings.setLevel("medium")}
             >
-              <div className="mr-4">ℹ️</div> <div>Instructions</div>
+              <button>Medium</button>
+            </Link>
+            <Link
+              role="button"
+              className="w-1/2 text-shadow  bg-gradient-to-tl bg-teal-300  text-center flex justify-center items-center h-20 text-yellow-50 rounded-md transform transition text-lg duration-100 hover:text-yellow-300 font-bold shadow-lg"
+              href={`/game?level=hard`}
+              onClick={() => settings.setLevel("hard")}
+            >
+              <button>Hard</button>
             </Link>
           </div>
         </main>

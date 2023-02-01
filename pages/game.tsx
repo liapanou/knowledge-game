@@ -18,21 +18,9 @@ export default function Game() {
       intervalMs: 1000,
     });
 
-  function getFlip() {
-    if (level === "easy") return 40;
-    else if (level === "medium") return 30;
-    else if (level === "hard") return 20;
-    return 0;
-  }
+  const getFlips = settings.flips;
 
-  function getScores() {
-    if (level === "easy") return 3;
-    else if (level === "medium") return 5;
-    else if (level === "hard") return 6;
-    return 0;
-  }
-  const getScore = getScores();
-  const getFlips = getFlip();
+  const getScore = settings.scores;
 
   const [flips, setFlips] = useState<number>(1);
   const [score, setScore] = useState<number>(0);
