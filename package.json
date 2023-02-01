@@ -17,6 +17,7 @@
     "daisyui": "^2.49.0",
     "eslint": "8.32.0",
     "eslint-config-next": "13.1.5",
+    "eslint-plugin-react-hooks": "^5.0.0-next-8b9ac8175-20230131",
     "next": "13.1.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",

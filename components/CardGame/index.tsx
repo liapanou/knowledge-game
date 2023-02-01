@@ -1,4 +1,6 @@
+import { SettingsProvider, useSettings } from "@/providers";
 import { match } from "assert";
+import { useRouter } from "next/router";
 import { useRef, useState } from "react";
 import { setSourceMapRange } from "typescript";
 
@@ -83,15 +85,11 @@ export function CardGame(props: {
       srcf: "https://images.pexels.com/photos/247502/pexels-photo-247502.jpeg?auto=compress&cs=tinysrgb&w=1600",
     },
   ]);
-
+  const router = useRouter();
   const [match, setMatch] = useState<{ srcf: string }[]>([{ srcf: "" }]);
+  const [play, setPlay] = useState<boolean>(false);
 
-  // const audioRef = useRef<HTMLAudioElement>(null);
-
-  // const handlePlay = () => {
-  //   audioRef.current?.play();
-  // };
-
+  const settings = useSettings();
   return (
     <div
       onClick={() => {
@@ -99,9 +97,6 @@ export function CardGame(props: {
       }}
       className="grid grid-cols-4 gap-2"
     >
-      {/* <audio ref={audioRef} controls>
-        <source src="public/audio/clickaudio.mp3" type="audio/mpeg" />
-      </audio> */}
       {cards.map((c, idx) => (
         <div
           key={idx}
@@ -126,7 +121,15 @@ export function CardGame(props: {
             }
           }}
         >
-          <div className="border w-36  h-40 border-black rounded-lg ">
+          <div
+            className="border w-36  h-40 border-black rounded-lg "
+            onClick={() => {
+              setPlay(true);
+              setTimeout(() => {
+                setPlay(false);
+              }, 500);
+            }}
+          >
             <picture>
               <img
                 className="w-full object-fill h-full"
@@ -140,6 +143,7 @@ export function CardGame(props: {
                 alt="picture"
               />
             </picture>
+            {play === true ? <audio autoPlay src="/audio/click.mp3" /> : ""}
           </div>
         </div>
       ))}
