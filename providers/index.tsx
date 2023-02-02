@@ -1,4 +1,11 @@
-import { createContext, ReactNode, useContext, useState } from "react";
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 
 type Lvl = "easy" | "medium" | "hard";
 type ContextType = {
@@ -43,6 +50,10 @@ export function SettingsProvider(props: { children: ReactNode }) {
     if (level === "hard") (time = 40), (flips = 30), (scores = 6);
     setState({ ...state, level, time, flips, scores });
   }
+  const ref = useRef<HTMLAudioElement>(null);
+  useEffect(() => {
+    if (ref.current) ref.current.volume = 0.1;
+  }, []);
 
   return (
     <Context.Provider
@@ -53,7 +64,7 @@ export function SettingsProvider(props: { children: ReactNode }) {
       }}
     >
       {/* otan einai muted true dn paizei otan einai muted false paizei */}
-      {!state.muted && <audio autoPlay src="/audio/music.mp3" />}
+      {!state.muted && <audio ref={ref} autoPlay src="/audio/music.mp3" />}
 
       {props.children}
     </Context.Provider>

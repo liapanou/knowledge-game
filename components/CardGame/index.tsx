@@ -95,7 +95,7 @@ export function CardGame(props: {
       onClick={() => {
         props.setFlips();
       }}
-      className="grid grid-cols-4 gap-2"
+      className="grid grid-cols-4 xs:gap-3 md:gap-2"
     >
       {cards.map((c, idx) => (
         <div
@@ -122,7 +122,7 @@ export function CardGame(props: {
           }}
         >
           <div
-            className="border w-36  h-40 border-black rounded-lg "
+            className="border xs:w-20 xs:h-24 md: md:h-40 lg:w-20 lg:h-24 xl:w-28 xl:h-36 2xl:w-36  2xl:h-40 border-black rounded-lg "
             onClick={() => {
               setPlay(true);
               setTimeout(() => {
@@ -143,7 +143,11 @@ export function CardGame(props: {
                 alt="picture"
               />
             </picture>
-            {play === true ? <audio autoPlay src="/audio/click.mp3" /> : ""}
+            {play === true && !settings.muted ? (
+              <audio autoPlay src="/audio/click.mp3" />
+            ) : (
+              ""
+            )}
           </div>
         </div>
       ))}

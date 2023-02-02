@@ -2,9 +2,10 @@ import { CardGame } from "@/components/CardGame";
 import Head from "next/head";
 import { useCountdown } from "usehooks-ts";
 import { clsx } from "clsx";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { useSettings } from "@/providers";
+import Link from "next/link";
 
 export default function Game() {
   const router = useRouter();
@@ -24,6 +25,21 @@ export default function Game() {
 
   const [flips, setFlips] = useState<number>(1);
   const [score, setScore] = useState<number>(0);
+  let flips1 = flips - 1;
+  useEffect(() => {
+    if (
+      flips1 > getFlips ||
+      (count === 0 && flips1 > getFlips) ||
+      (count === 0 && score < getScore) ||
+      (count === 0 && score < getScore && flips1 > getFlips)
+    ) {
+      router.push(`/gameover?time=${count}&score=${score}&flips=${flips1}`);
+    }
+
+    if (score >= getScore && flips1 <= getFlips) {
+      router.push(`/win?time=${count}&score=${score}&flips=${flips1}`);
+    }
+  }, [count, score, flips1, flips, getScore, getFlips, router]);
 
   return (
     <div className=" w-screen h-screen overflow-hidden">
@@ -32,88 +48,70 @@ export default function Game() {
       </Head>
       <div>
         <div>
-          {count === 0 ||
-          score === 8 ||
-          (count === 0 && score >= getScore && flips <= getFlips) ||
-          flips > getFlips ||
-          (score >= getScore && flips <= getFlips) ? (
-            <div
-              onAnimationStart={stopCountdown}
-              className="bg-teal-900 flex justify-center items-center py-80"
-            >
-              <div>
-                <h1
-                  className={clsx(
-                    "text-9xl  uppercase text-red-700 font-extrabold mb-16 text-center blink",
-                    {
-                      "text-yellow-500": score >= getScore && flips <= getFlips,
-                    }
-                  )}
-                >
-                  {score >= getScore && flips <= getFlips
-                    ? "You Win 🏆"
-                    : "Game Over"}
+          <div
+            onClick={startCountdown}
+            className="xs:p-6 md:p-8 lg:p-4 2xl:p-8 bg-gradient-to-r bg-teal-400 w-screen min-h-screen h-full"
+          >
+            <div className="grid xs:grid-cols-[2fr_30px] md:grid-cols-[2fr_100px] ">
+              <div className="flex justify-center items-center">
+                <h1 className="xs:text-2xl md:text-5xl lg:text-4xl xl:text-5xl text-shadow text-yellow-300 font-extrabold text-center  w-fit h-fit flex xs:ml-16 md:ml-24">
+                  Memory Game 🧠
                 </h1>
-                <div
-                  className={clsx(
-                    "text-5xl text-red-700  font-extrabold text-center  ",
-                    {
-                      "text-yellow-500": score >= getScore && flips <= getFlips,
-                    }
-                  )}
-                >
-                  <h2 className="mb-4"> Score : {score} </h2>
-                  <h2 className="mb-4"> Flips : {flips - 1}</h2>
-                  <h2>Time : {count}</h2>
-                </div>
               </div>
+              <button
+                className={clsx(
+                  "border shadow bg-yellow-300 xs:w-fit xs:h-fit md:w-10 md:h-12 lg:w-fit lg:h-fit rounded-lg text-xl",
+                  {
+                    "line-through link-error": settings.muted,
+                  }
+                )}
+                onClick={() => {
+                  settings.setMute(!settings.muted);
+                }}
+              >
+                🔊
+              </button>
             </div>
-          ) : (
-            <div
-              onClick={startCountdown}
-              className="p-8 bg-gradient-to-r bg-teal-400 w-screen min-h-screen h-full"
-            >
-              <h1 className="text-5xl text-shadow text-yellow-300 font-extrabold text-center">
-                Memory Game 🧠
-              </h1>
-              <hr className="my-8 w-full opacity-40 "></hr>
-              <div className="grid place-items-center  w-full h-full py-6 ">
-                <div>
-                  <div className="grid grid-cols-3 mb-4 ">
-                    <div
-                      className={clsx(
-                        "flex gap-4 font-bold ",
-                        {
-                          "text-yellow-300 text-3xl": count >= 10,
-                        },
-                        {
-                          "text-red-700 text-5xl blink": count < 10,
-                        }
-                      )}
-                    >
-                      <h2>Time :</h2>
-                      <div>{count}</div>
-                    </div>
 
-                    <h2 className="text-3xl text-yellow-300 font-bold text-center">
-                      Score : {score}
-                    </h2>
-
-                    <h2 className="text-3xl text-yellow-300 font-bold ml-auto">
-                      Flips : {flips - 1}
-                    </h2>
+            <hr className="xs:my-8 md:my-8 lg:my-3 2xl:my-8 w-full opacity-40 "></hr>
+            <div className="grid place-items-center  w-full h-full xs:py-6 md:py-6 lg:py-3 2xl:py-6 ">
+              <div>
+                <div className="grid grid-cols-3 mb-4 ">
+                  <div
+                    className={clsx(
+                      "flex gap-4 font-bold ",
+                      {
+                        "text-yellow-300 xs:text-lg md:text-3xl lg:text-2xl 2xl:text-3xl":
+                          count >= 10,
+                      },
+                      {
+                        "text-red-700 xs:text-lg md:text-5xl lg:text-4xl 2xl:text-5xl blink":
+                          count < 10,
+                      }
+                    )}
+                  >
+                    <h2>Time :</h2>
+                    <div>{count}</div>
                   </div>
 
-                  <CardGame
-                    flips={flips}
-                    setFlips={() => setFlips(flips + 1)}
-                    score={score}
-                    setScore={() => setScore(score + 1)}
-                  />
+                  <h2 className="xs:text-lg md:text-3xl lg:text-2xl 2xl:text-3xl text-yellow-300 font-bold text-center">
+                    Score : {score}
+                  </h2>
+
+                  <h2 className="xs:text-lg md:text-3xl lg:text-2xl 2xl:text-3xl text-yellow-300 font-bold ml-auto">
+                    Flips : {flips - 1}
+                  </h2>
                 </div>
+
+                <CardGame
+                  flips={flips}
+                  setFlips={() => setFlips(flips + 1)}
+                  score={score}
+                  setScore={() => setScore(score + 1)}
+                />
               </div>
             </div>
-          )}
+          </div>
         </div>
       </div>
     </div>
