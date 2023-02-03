@@ -137,3 +137,19 @@ a {
   width: 144px ;
   height : 160px;
 }
+
+
+.bg-win {
+  background-image: url("https://wallpaperaccess.com/full/1169840.jpg");
+}
+
+.bg-lose{
+  background-image: url("http://www.academialeb.com/wp-content/uploads/2014/07/section-BG-dark.jpg");
+
+}
+/* 
+.disable-click{
+  pointer-events: none;
+  cursor: default;
+  display: block;
+} */

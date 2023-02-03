@@ -48,10 +48,7 @@ export default function Game() {
       </Head>
       <div>
         <div>
-          <div
-            onClick={startCountdown}
-            className="xs:p-6 md:p-8 lg:p-4 2xl:p-8 bg-gradient-to-r bg-teal-400 w-screen min-h-screen h-full"
-          >
+          <div className="xs:p-6 md:p-8 lg:p-4 2xl:p-8 bg-gradient-to-r bg-teal-400 w-screen min-h-screen h-full">
             <div className="grid xs:grid-cols-[2fr_30px] md:grid-cols-[2fr_100px] ">
               <div className="flex justify-center items-center">
                 <h1 className="xs:text-2xl md:text-5xl lg:text-4xl xl:text-5xl text-shadow text-yellow-300 font-extrabold text-center  w-fit h-fit flex xs:ml-16 md:ml-24">
@@ -102,13 +99,14 @@ export default function Game() {
                     Flips : {flips - 1}
                   </h2>
                 </div>
-
-                <CardGame
-                  flips={flips}
-                  setFlips={() => setFlips(flips + 1)}
-                  score={score}
-                  setScore={() => setScore(score + 1)}
-                />
+                <div onClick={startCountdown}>
+                  <CardGame
+                    flips={flips}
+                    setFlips={() => setFlips(flips + 1)}
+                    score={score}
+                    setScore={() => setScore(score + 1)}
+                  />
+                </div>
               </div>
             </div>
           </div>

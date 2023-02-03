@@ -53,7 +53,7 @@ export function SettingsProvider(props: { children: ReactNode }) {
   const ref = useRef<HTMLAudioElement>(null);
   useEffect(() => {
     if (ref.current) ref.current.volume = 0.1;
-  }, []);
+  }, [state.muted]);
 
   return (
     <Context.Provider
