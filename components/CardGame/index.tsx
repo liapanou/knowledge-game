@@ -2,7 +2,7 @@ import { SettingsProvider, useSettings } from "@/providers";
 import { match } from "assert";
 import clsx from "clsx";
 import { useRouter } from "next/router";
-import { useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { setSourceMapRange } from "typescript";
 
 const animalCards: { srcb: string; srcf: string }[] = [
@@ -92,9 +92,14 @@ export function CardGame(props: {
   const [play, setPlay] = useState<boolean>(false);
 
   const settings = useSettings();
+
+  const suffledAnimalCards = useMemo(
+    () => animalCards.sort((a, b) => -1 + Math.random() * 3),
+    []
+  );
   return (
     <div className="grid grid-cols-4 xs:gap-3 md:gap-2 ">
-      {animalCards.map((c, idx) => (
+      {suffledAnimalCards.map((c, idx) => (
         <div
           className={clsx({
             "pointer-events-none":

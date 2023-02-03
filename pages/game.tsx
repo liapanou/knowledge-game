@@ -48,16 +48,22 @@ export default function Game() {
       </Head>
       <div>
         <div>
-          <div className="xs:p-6 md:p-8 lg:p-4 2xl:p-8 bg-gradient-to-r bg-teal-400 w-screen min-h-screen h-full">
-            <div className="grid xs:grid-cols-[2fr_30px] md:grid-cols-[2fr_100px] ">
+          <div className="xs:py-6 md:py-8 lg:py-4 2xl:py-8 bg-gradient-to-r bg-teal-400 w-screen min-h-screen h-full">
+            <div className="grid xs:grid-cols-[30px_2fr_30px] md:grid-cols-[100px_2fr_100px] ">
+              <button
+                className="xs:text-2xl md:text-4xl lg:text-2xl xs:ml-10 md:ml-40 "
+                onClick={() => router.back()}
+              >
+                ⬅️
+              </button>
               <div className="flex justify-center items-center">
-                <h1 className="xs:text-2xl md:text-5xl lg:text-4xl xl:text-5xl text-shadow text-yellow-300 font-extrabold text-center  w-fit h-fit flex xs:ml-16 md:ml-24">
+                <h1 className="xs:text-2xl md:text-5xl lg:text-4xl xl:text-5xl text-shadow text-yellow-300 font-extrabold text-center  w-fit h-fit flex xs:ml-10 md:ml-24">
                   Memory Game 🧠
                 </h1>
               </div>
               <button
                 className={clsx(
-                  "border shadow bg-yellow-300 xs:w-fit xs:h-fit md:w-10 md:h-12 lg:w-fit lg:h-fit rounded-lg text-xl",
+                  "border shadow bg-yellow-300 xs:w-fit xs:h-fit md:w-10 md:h-12 lg:w-fit lg:h-fit rounded-lg xs:mr-7 md:mr-10 text-xl",
                   {
                     "line-through link-error": settings.muted,
                   }
