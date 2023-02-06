@@ -1,3 +1,4 @@
+import { useT } from "@/Hooks/useT";
 import { useSettings } from "@/providers";
 import Head from "next/head";
 import Link from "next/link";
@@ -9,11 +10,9 @@ export default function Home() {
   const settings = useSettings();
   const mute = settings.muted;
   const audio = () => new Audio("/audio/click.mp3");
+  const t = useT();
   return (
     <div className=" w-screen h-screen overflow-hidden">
-      <Head>
-        <title>Memory Game</title>
-      </Head>
       <div className="bg-gradient-to-r bg-teal-400 w-screen min-h-screen h-full">
         <main className="xs:p-16 md:p-16 lg:p-8">
           <h1 className="xs:text-2xl md:text-5xl text-shadow text-yellow-300 font-extrabold text-center">
@@ -31,7 +30,7 @@ export default function Home() {
             >
               <>
                 <div className="mr-4">▶️</div>
-                <div>Start Game</div>
+                <div>{t("startGame")}</div>
               </>
             </Link>
             <button
@@ -57,7 +56,7 @@ export default function Home() {
             </label>
             {/* The modal */}
             <input type="checkbox" id="my-modal-4" className="modal-toggle" />
-            <label htmlFor="my-modal-4" className="modal cursor-pointer">
+            {/* <label htmlFor="my-modal-4" className="modal cursor-pointer">
               <label
                 className="modal-box md:w-full md:h-fit lg:relative bg-teal-900 "
                 htmlFor=""
@@ -93,7 +92,7 @@ export default function Home() {
                   </div>
                 </p>
               </label>
-            </label>
+            </label> */}
           </div>
         </main>
       </div>
