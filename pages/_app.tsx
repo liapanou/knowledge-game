@@ -19,19 +19,19 @@ export default function App({ Component, pageProps }: AppProps) {
           router.replace(router.asPath, router.asPath, { locale });
           setLang(locale);
         }}
-        className="cursor-pointer bg-teal-400  absolute z-50 top-0 left-0   text-center text-2xl appearance-none block px-3 py-4 w-fit   text-black font-bold   border-b border-opacity-25 border-white outline-none"
+        className="cursor-pointer bg-transparent  absolute z-50 top-0 left-0  text-center xs:text-lg md:text-2xl lg:text-lg appearance-none block xs:px-1 md:px-3 py-4 w-fit   text-black font-bold   border-white outline-none"
       >
         <option
-          className=" text-yellow-500 uppercase  bg-black text-2xl "
+          className=" text-yellow-500  bg-black xs:text-lg md:text-2xl lg:text-lg  "
           value="en"
         >
-          🇬🇧 &nbsp; {(locale === "el" ? "ΑΓΓΛΙΚΑ" : `English`).toUpperCase()}
+          🇬🇧
         </option>
         <option
-          className="text-yellow-500 uppercase  bg-black text-2xl "
+          className="text-yellow-500  bg-black xs:text-lg md:text-2xl lg:text-lg  "
           value="el"
         >
-          🇬🇷 &nbsp;{(locale === "el" ? "ΕΛΛΗΝΙΚΑ" : `Greek`).toUpperCase()}
+          🇬🇷
         </option>
       </select>
       <Component {...pageProps} />

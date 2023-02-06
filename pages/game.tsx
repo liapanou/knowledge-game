@@ -6,12 +6,14 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { useSettings } from "@/providers";
 import Link from "next/link";
+import { useT } from "@/Hooks/useT";
 
 export default function Game() {
   const router = useRouter();
   const level = router.query.level;
 
   const settings = useSettings();
+  const t = useT();
 
   const [count, { startCountdown, stopCountdown, resetCountdown }] =
     useCountdown({
@@ -49,32 +51,37 @@ export default function Game() {
       <div>
         <div>
           <div className="xs:py-6 md:py-8 lg:py-4 2xl:py-8 bg-gradient-to-r bg-teal-400 w-screen min-h-screen h-full">
-            <div className="grid xs:grid-cols-[50px_2fr_30px] md:grid-cols-[200px_2fr_100px] ">
-              <Link
-                role="button"
-                href={`/level`}
-                className="  xs:text-2xl md:text-4xl md:w-10 md:h-12 lg:text-2xl xs:ml-6 md:ml-20 lg:ml-40"
-              >
-                ⬅️
-              </Link>
-              <div className="flex justify-center items-center">
-                <h1 className="xs:text-2xl md:text-4xl lg:text-4xl xl:text-5xl text-shadow text-yellow-300 font-extrabold text-center  w-fit h-fit flex md:mr-20">
+            <div className="grid xs:grid-cols-[70px_250px_70px] md:grid-cols-[200px_400px_220px] lg:grid-cols-[300px_400px_320px] xl:grid-cols-[300px_700px_320px] 2xl:grid-cols-[300px_1fr_320px]">
+              <div className=" w-full">
+                <Link
+                  role="button"
+                  href={`/level`}
+                  className="  xs:text-2xl md:text-4xl md:w-10 md:h-12 lg:text-2xl xs:ml-9 md:ml-20 lg:ml-48"
+                >
+                  ⬅️
+                </Link>
+              </div>
+
+              <div className="flex justify-center items-center ">
+                <h1 className="xs:text-2xl md:text-4xl lg:text-4xl xl:text-5xl text-shadow text-yellow-300 font-extrabold text-center  w-fit h-fit  ">
                   Memory Game 🧠
                 </h1>
               </div>
-              <button
-                className={clsx(
-                  "border shadow bg-yellow-300 xs:w-fit xs:h-fit md:w-10 md:h-12 lg:w-fit lg:h-fit rounded-lg xs:mr-7 md:mr-10 text-xl",
-                  {
-                    "line-through link-error": settings.muted,
-                  }
-                )}
-                onClick={() => {
-                  settings.setMute(!settings.muted);
-                }}
-              >
-                🔊
-              </button>
+              <div className=" w-full">
+                <button
+                  className={clsx(
+                    "border shadow bg-yellow-300 xs:w-fit xs:h-fit md:w-10 md:h-12 lg:w-fit lg:h-fit rounded-lg xs:mr-1 md:ml-20  text-xl",
+                    {
+                      "line-through link-error": settings.muted,
+                    }
+                  )}
+                  onClick={() => {
+                    settings.setMute(!settings.muted);
+                  }}
+                >
+                  🔊
+                </button>
+              </div>
             </div>
 
             <hr className="xs:my-8 md:my-8 lg:my-3 2xl:my-8 w-full opacity-40 "></hr>
@@ -94,16 +101,16 @@ export default function Game() {
                       }
                     )}
                   >
-                    <h2>Time :</h2>
+                    <h2>{t("time")} :</h2>
                     <div>{count}</div>
                   </div>
 
                   <h2 className="xs:text-lg md:text-3xl lg:text-2xl 2xl:text-3xl text-yellow-300 font-bold text-center">
-                    Score : {score}
+                    {t("score")} : {score}
                   </h2>
 
                   <h2 className="xs:text-lg md:text-3xl lg:text-2xl 2xl:text-3xl text-yellow-300 font-bold ml-auto">
-                    Flips : {flips - 1}
+                    {t("flips")} : {flips - 1}
                   </h2>
                 </div>
                 <div onClick={startCountdown}>
