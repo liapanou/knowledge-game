@@ -62,28 +62,35 @@ export default function Home() {
                 className="modal-box md:w-full md:h-fit lg:relative bg-teal-900 "
                 htmlFor=""
               >
-                <h3 className="xs:text-lg md:text-5xl lg:text-lg font-extrabold text-yellow-300 text-center">
-                  Instructions Of Memory Game
+                <h3 className="xs:text-xl md:text-3xl lg:text-2xl font-extrabold text-yellow-300 text-center">
+                  Memory Game - Instructions
                 </h3>
-                <p className="py-4 text-yellow-50 xs:text-base md:text-xl">
-                  Lorem ipsum dolor sit amet. Ut repellendus facere aut minima
-                  doloribus et quibusdam ullam est cumque temporibus id
-                  laudantium labore qui officiis ipsam. Id quia nobis ea eius
-                  adipisci qui esse voluptatem. Sed inventore delectus et culpa
-                  laborum 33 quidem provident ad consectetur impedit qui odit
-                  quod a saepe assumenda aut iusto expedita! Non consequatur
-                  quasi aut omnis nulla ut aspernatur eaque eos omnis sequi sed
-                  excepturi quas. Qui sint doloremque sed possimus earum in
-                  quibusdam minima ut repudiandae laudantium et quos deleniti?
-                  Rem cupiditate reiciendis aut repellendus molestias qui
-                  eveniet voluptatem id deserunt error sit autem commodi. Ut
-                  similique iste sed distinctio molestias 33 voluptatem labore
-                  ut facilis provident. Eos praesentium iure qui minus natus qui
-                  minus facere. Est vero porro quo sint ipsam et amet quas sed
-                  reprehenderit debitis At inventore delectus. Ea enim similique
-                  quo dicta quaerat sit reprehenderit aliquid et recusandae
-                  temporibus et maxime nulla aut debitis similique et iure
-                  officia.
+                <p className="py-4 text-yellow-50 ">
+                  <div className="text-yellow-200 font-bold xs:lg md:text-2xl lg:text-xl">
+                    Level: Easy
+                  </div>
+                  <div className="xs:text-base md:text-xl lg:text-lg">
+                    You win if you find at least 3 pairs of images without
+                    exceeding the 60 flips and the 100 seconds
+                  </div>
+                </p>
+                <p className="py-4 text-yellow-50 ">
+                  <div className="text-yellow-200 font-bold xs:text-lg md:text-2xl lg:text-xl">
+                    Level: Medium
+                  </div>
+                  <div className="xs:text-base md:text-xl lg:text-lg">
+                    You win if you find at least 5 pairs of images without
+                    exceeding the 50 flips and the 60 seconds
+                  </div>
+                </p>
+                <p className="py-4 text-yellow-50 ">
+                  <div className="text-yellow-200 font-bold xs:text-lg md:text-2xl lg:text-xl">
+                    Level: Hard
+                  </div>
+                  <div className="xs:text-base md:text-xl lg:text-lg">
+                    You win if you find at least 6 pairs of images without
+                    exceeding the 40 flips and the 40 seconds
+                  </div>
                 </p>
               </label>
             </label>

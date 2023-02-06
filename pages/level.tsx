@@ -19,15 +19,17 @@ export default function Level() {
       </Head>
       <div className="bg-gradient-to-r bg-teal-400 w-screen min-h-screen h-full">
         <main className="xs:p-16 md:p-16 lg:p-8">
-          <div className="grid xs:grid-cols-[30px_2fr_30px] md:grid-cols-[100px_2fr_100px] ">
-            <button
-              className="  xs:text-2xl md:text-4xl lg:text-2xl xs:ml-6 md:ml-40"
-              onClick={() => router.back()}
+          <div className="grid xs:grid-cols-[50px_2fr_30px]  md:grid-cols-[200px_2fr_100px] ">
+            <Link
+              role="button"
+              href={`/`}
+              className="  xs:text-2xl md:text-4xl md:w-10 md:h-12 lg:text-2xl xs:ml-6 md:ml-20 lg:ml-40 "
             >
               ⬅️
-            </button>
-            <div className="flex justify-center items-center">
-              <h1 className="xs:text-2xl md:text-5xl text-shadow text-yellow-300 font-extrabold text-center  w-fit h-fit flex xs:ml-6 md:ml-24">
+            </Link>
+
+            <div className="flex justify-center items-center  ">
+              <h1 className="xs:text-2xl md:text-4xl text-shadow text-yellow-300 font-extrabold text-center  w-fit h-fit flex  md:mr-20  ">
                 Select Level
               </h1>
             </div>

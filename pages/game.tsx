@@ -49,15 +49,16 @@ export default function Game() {
       <div>
         <div>
           <div className="xs:py-6 md:py-8 lg:py-4 2xl:py-8 bg-gradient-to-r bg-teal-400 w-screen min-h-screen h-full">
-            <div className="grid xs:grid-cols-[30px_2fr_30px] md:grid-cols-[100px_2fr_100px] ">
-              <button
-                className="xs:text-2xl md:text-4xl lg:text-2xl xs:ml-10 md:ml-40 "
-                onClick={() => router.back()}
+            <div className="grid xs:grid-cols-[50px_2fr_30px] md:grid-cols-[200px_2fr_100px] ">
+              <Link
+                role="button"
+                href={`/level`}
+                className="  xs:text-2xl md:text-4xl md:w-10 md:h-12 lg:text-2xl xs:ml-6 md:ml-20 lg:ml-40"
               >
                 ⬅️
-              </button>
+              </Link>
               <div className="flex justify-center items-center">
-                <h1 className="xs:text-2xl md:text-5xl lg:text-4xl xl:text-5xl text-shadow text-yellow-300 font-extrabold text-center  w-fit h-fit flex xs:ml-10 md:ml-24">
+                <h1 className="xs:text-2xl md:text-4xl lg:text-4xl xl:text-5xl text-shadow text-yellow-300 font-extrabold text-center  w-fit h-fit flex md:mr-20">
                   Memory Game 🧠
                 </h1>
               </div>
