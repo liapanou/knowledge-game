@@ -1,18 +1,17 @@
 import { useT } from "@/Hooks/useT";
 import { useSettings } from "@/providers";
-import Head from "next/head";
+
 import Link from "next/link";
-import { useRouter } from "next/router";
+
 import { useRef } from "react";
 
 export default function Home() {
-  const router = useRouter();
-  const level = router.query.level as string;
   const settings = useSettings();
   const mute = settings.muted;
   const audio = () => new Audio("/audio/click.mp3");
   const ref = useRef<HTMLInputElement>(null);
   const t = useT();
+
   return (
     <div className=" w-screen h-screen overflow-hidden ">
       <div className="bg-gradient-to-r bg-teal-400 w-screen min-h-screen h-full">

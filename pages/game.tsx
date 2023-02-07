@@ -17,17 +17,19 @@ export default function Game() {
 
   const [count, { startCountdown, stopCountdown, resetCountdown }] =
     useCountdown({
-      countStart: settings.time ?? 30,
+      countStart: settings.ltime ?? 30,
       intervalMs: 1000,
     });
 
-  const getFlips = settings.flips;
+  const getFlips = settings.lflips;
 
-  const getScore = settings.scores;
+  const getScore = settings.lscores;
+  let score = settings.scores;
 
   const [flips, setFlips] = useState<number>(1);
-  const [score, setScore] = useState<number>(0);
+
   let flips1 = flips - 1;
+
   useEffect(() => {
     if (
       flips1 > getFlips ||
@@ -85,42 +87,39 @@ export default function Game() {
             </div>
 
             <hr className="xs:my-8 md:my-8 lg:my-3 2xl:my-8 w-full opacity-40 "></hr>
-            <div className="grid place-items-center  w-full h-full xs:py-6 md:py-6 lg:py-3 2xl:py-6 ">
-              <div>
-                <div className="grid grid-cols-3 mb-4 ">
-                  <div
-                    className={clsx(
-                      "flex gap-4 font-bold ",
-                      {
-                        "text-yellow-300 xs:text-lg md:text-3xl lg:text-2xl 2xl:text-3xl":
-                          count >= 10,
-                      },
-                      {
-                        "text-red-700 xs:text-lg md:text-5xl lg:text-4xl 2xl:text-5xl blink":
-                          count < 10,
-                      }
-                    )}
-                  >
-                    <h2>{t("time")} :</h2>
-                    <div>{count}</div>
-                  </div>
-
-                  <h2 className="xs:text-lg md:text-3xl lg:text-2xl 2xl:text-3xl text-yellow-300 font-bold text-center">
-                    {t("score")} : {score}
-                  </h2>
-
-                  <h2 className="xs:text-lg md:text-3xl lg:text-2xl 2xl:text-3xl text-yellow-300 font-bold ml-auto">
-                    {t("flips")} : {flips - 1}
-                  </h2>
+            <div className="grid place-items-center  w-full h-full xs:py-6 md:py-6 lg:py-3 2xl:py-6  ">
+              <div className="grid grid-cols-3 mb-4 ">
+                <div
+                  className={clsx(
+                    "flex gap-4 font-bold  ",
+                    {
+                      "text-yellow-300 xs:text-lg md:text-3xl lg:text-2xl 2xl:text-3xl":
+                        count >= 10,
+                    },
+                    {
+                      "text-red-700 xs:text-lg md:text-5xl lg:text-4xl 2xl:text-5xl blink":
+                        count < 10,
+                    }
+                  )}
+                >
+                  <h2>{t("time")} :</h2>
+                  <div>{count}</div>
                 </div>
-                <div onClick={startCountdown}>
-                  <CardGame
-                    flips={flips}
-                    setFlips={() => setFlips(flips + 1)}
-                    score={score}
-                    setScore={() => setScore(score + 1)}
-                  />
-                </div>
+
+                <h2 className="xs:text-lg md:text-3xl lg:text-2xl 2xl:text-3xl text-yellow-300 font-bold text-center">
+                  {t("score")} : {score}
+                </h2>
+
+                <h2 className="xs:text-lg md:text-3xl  lg:text-2xl  w-full  2xl:text-3xl text-yellow-300 font-bold ml-auto">
+                  {t("flips")} : {flips - 1}
+                </h2>
+              </div>
+              <div onClick={startCountdown}>
+                <CardGame
+                  flips={flips}
+                  setFlips={() => setFlips(flips + 1)}
+                  score={score}
+                />
               </div>
             </div>
           </div>

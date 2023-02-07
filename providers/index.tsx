@@ -1,3 +1,4 @@
+import { match } from "assert";
 import { useRouter } from "next/router";
 import {
   createContext,
@@ -214,29 +215,82 @@ type Lvl = "easy" | "medium" | "hard";
 type ContextType = {
   muted: boolean;
   level: Lvl;
-  time?: number;
-  flips: number;
+  ltime?: number;
+  lflips: number;
+  lscores: number;
+  flipCard1: { idx: number; srcf: string };
+  flipCard2: { idx: number; srcf: string };
+  match: { srcf: string }[];
+  match1?: { srcf: string }[];
+  score: number;
   scores: number;
   animalCards: { srcb: string; srcf: string }[];
   natureCards: { srcb: string; srcf: string }[];
   landScapeCards: { srcb: string; srcf: string }[];
   levelCards: { srcb: string; srcf: string }[];
+  clearCards: {
+    flipCard1: {
+      idx: number;
+      srcf: string;
+    };
+    flipCard2: {
+      idx: number;
+      srcf: string;
+    };
+  };
   setMute: (muted: boolean) => void;
   setLevel: (level: Lvl) => void;
+  setFlipCard1: (flipCard1: { idx: number; srcf: string }) => void;
+  setFlipCard2: (flipCard2: { idx: number; srcf: string }) => void;
+  setMatchandScore: (
+    flipCard1: { idx: number; srcf: string },
+    flipCard2: { idx: number; srcf: string },
+    newMatch: { srcf: string },
+    score: number,
+    match: { srcf: string }[]
+  ) => void;
+  setScore: (score: number) => void;
 };
 
 const defaultValue: ContextType = {
   muted: true,
   level: "easy",
-  time: undefined,
-  flips: 0,
+  ltime: undefined,
+  lflips: 0,
+  lscores: 0,
+  flipCard1: { idx: -1, srcf: "" },
+  flipCard2: { idx: -1, srcf: "" },
+  match: [{ srcf: "" }],
+  match1: undefined,
+  score: 0,
   scores: 0,
   animalCards: [{ srcb: "", srcf: "" }],
   natureCards: [{ srcb: "", srcf: "" }],
   landScapeCards: [{ srcb: "", srcf: "" }],
   levelCards: [{ srcb: "", srcf: "" }],
+  clearCards: {
+    flipCard1: {
+      idx: -1,
+      srcf: "",
+    },
+    flipCard2: {
+      idx: -1,
+      srcf: "",
+    },
+  },
+
   setMute: (muted: boolean) => {},
   setLevel: (level: Lvl) => {},
+  setFlipCard1: (flipCard1: { idx: number; srcf: string }) => {},
+  setFlipCard2: (flipCard2: { idx: number; srcf: string }) => {},
+  setMatchandScore: (
+    flipCard1: { idx: number; srcf: string },
+    flipCard2: { idx: number; srcf: string },
+    newMatch: { srcf: string },
+    score: number,
+    match: { srcf: string }[]
+  ) => {},
+  setScore: (score: number) => {},
 };
 
 const Context = createContext<ContextType>(defaultValue);
@@ -251,29 +305,86 @@ export function SettingsProvider(props: { children: ReactNode }) {
   function setMute(muted: boolean) {
     setState({ ...state, muted });
   }
-
+  const clearCards = {
+    flipCard1: {
+      idx: -1,
+      srcf: "",
+    },
+    flipCard2: {
+      idx: -1,
+      srcf: "",
+    },
+  };
   function setLevel(level: Lvl) {
-    let time = 600;
-    let flips = 40;
-    let scores = 6;
+    let ltime = 600;
+    let lflips = 40;
+    let lscores = 6;
     let levelCards = [{ srcb: "", srcf: "" }];
+    let scores = 0;
+    let match = [{ srcf: "" }];
+    let match1 = undefined;
     if (level === "easy")
-      (time = 100), (flips = 60), (scores = 3), (levelCards = animalCards);
+      (ltime = 100),
+        (lflips = 60),
+        (lscores = 3),
+        (levelCards = animalCards),
+        clearCards,
+        scores,
+        match,
+        match1;
+
     if (level === "medium")
-      (time = 60), (flips = 50), (scores = 5), (levelCards = natureCards);
+      (ltime = 60),
+        (lflips = 50),
+        (lscores = 5),
+        (levelCards = natureCards),
+        clearCards,
+        scores,
+        match,
+        match1;
+
     if (level === "hard")
-      (time = 40), (flips = 40), (scores = 6), (levelCards = landScapeCards);
+      (ltime = 40),
+        (lflips = 40),
+        (lscores = 6),
+        (levelCards = landScapeCards),
+        clearCards,
+        scores,
+        match,
+        match1;
+
     setState({
       ...state,
       level,
-      time,
-      flips,
-      scores,
+      ltime,
+      lflips,
+      lscores,
       levelCards,
+      clearCards,
+      scores,
+      match,
+      match1,
     });
   }
 
+  function setFlipCard1(flipCard1: { idx: number; srcf: string }) {
+    setState({ ...state, ...clearCards, flipCard1 });
+  }
+
+  function setFlipCard2(flipCard2: { idx: number; srcf: string }) {
+    setState({ ...state, flipCard2 });
+
+    if (state.flipCard1.srcf === flipCard2.srcf) {
+      setState({
+        ...state,
+        scores: state.score + 1,
+        match1: [...state.match, { srcf: flipCard2.srcf }],
+      });
+    }
+  }
+
   const ref = useRef<HTMLAudioElement>(null);
+
   useEffect(() => {
     if (ref.current) ref.current.volume = 0.1;
   }, [state.muted]);
@@ -284,6 +395,8 @@ export function SettingsProvider(props: { children: ReactNode }) {
         ...state,
         setMute,
         setLevel,
+        setFlipCard1,
+        setFlipCard2,
       }}
     >
       {/* otan einai muted true dn paizei otan einai muted false paizei */}

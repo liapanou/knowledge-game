@@ -78,7 +78,7 @@ const translations: Record<Locale, Record<Key, string>> = {
 
 export function useT() {
   const router = useRouter();
-  const locale = router.locale as "el" | "en";
+  const locale = router.locale as "en" | "el";
   const t = (key: Key) =>
     translations[locale][key] === ""
       ? `to be translated: ${key}`

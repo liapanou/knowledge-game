@@ -11,7 +11,6 @@ export default function Level() {
   const level = router.query.level as string;
   const settings = useSettings();
   const mute = settings.muted;
-  const [play, setPlay] = useState<boolean>(false);
   const audio = () => new Audio("/audio/click.mp3");
   const t = useT();
   return (
@@ -21,26 +20,26 @@ export default function Level() {
       </Head>
       <div className="bg-gradient-to-r bg-teal-400 w-screen min-h-screen h-full">
         <main className="xs:py-16 md:py-16 lg:py-8">
-          <div className="grid xs:grid-cols-[70px_150px_70px] md:grid-cols-[200px_350px_220px] lg:grid-cols-[300px_400px_320px] xl:grid-cols-[300px_700px_320px] 2xl:grid-cols-[300px_1fr_320px]">
+          <div className="grid xs:grid-cols-[100px_200px_120px] md:grid-cols-[200px_350px_220px] lg:grid-cols-[300px_400px_320px] xl:grid-cols-[300px_700px_320px] 2xl:grid-cols-[300px_1fr_320px]">
             <div className=" w-full">
               <Link
                 role="button"
                 href={`/`}
-                className="  xs:text-2xl md:text-4xl md:w-10 md:h-12 lg:text-2xl xs:ml-7 md:ml-20 lg:ml-48"
+                className="  xs:text-2xl md:text-4xl md:w-10 md:h-12 lg:text-2xl xs:ml-12 md:ml-20 lg:ml-48"
               >
                 ⬅️
               </Link>
             </div>
 
             <div className="flex justify-center items-center  ">
-              <h1 className="xs:text-lg md:text-4xl text-shadow text-yellow-300 font-extrabold text-center  w-fit h-fit flex    ">
+              <h1 className="xs:text-lg md:text-4xl text-shadow text-yellow-300 font-extrabold text-center  w-fit h-fit flex xs:ml-0  md:ml-9 lg:ml-0   ">
                 {t("selectLevel")}
               </h1>
             </div>
             <div className=" w-full">
               <button
                 className={clsx(
-                  "border shadow bg-yellow-300 xs:w-fit xs:h-fit md:w-10 md:h-12 lg:w-fit lg:h-fit rounded-lg text-xl xs:ml-4 md:ml-20",
+                  "border shadow bg-yellow-300 xs:w-fit xs:h-fit md:w-10 md:h-12 lg:w-fit lg:h-fit rounded-lg text-xl xs:ml-4 md:ml-28 lg:ml-20",
                   {
                     "line-through link-error": settings.muted,
                   }

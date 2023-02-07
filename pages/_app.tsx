@@ -10,6 +10,7 @@ export default function App({ Component, pageProps }: AppProps) {
   const setLang = (e: string) => {
     if (typeof window !== "undefined") localStorage.setItem("lang", e);
   };
+
   return (
     <SettingsProvider>
       <select
