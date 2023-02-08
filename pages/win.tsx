@@ -23,6 +23,14 @@ export default function Win() {
 
               <div className="text-center font-extrabold text-yellow-500 xs:text-3xl md:text-5xl   ">
                 <h2 className="mb-4">
+                  {t("level")} :
+                  {settings.level === "easy"
+                    ? t("easy")
+                    : settings.level === "medium"
+                    ? t("medium")
+                    : t("hard")}
+                </h2>
+                <h2 className="mb-4">
                   {t("score")} : {match.length}
                 </h2>
                 <h2 className="mb-4">

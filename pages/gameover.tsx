@@ -7,6 +7,7 @@ export default function GameOver() {
   const settings = useSettings();
   const router = useRouter();
   const { flips, match, time } = settings;
+  const { locale } = useRouter();
   const t = useT();
   return (
     <div
@@ -29,6 +30,14 @@ export default function GameOver() {
           )}
         >
           <h2 className="mb-4">
+            {t("level")} :
+            {settings.level === "easy"
+              ? t("easy")
+              : settings.level === "medium"
+              ? t("medium")
+              : t("hard")}
+          </h2>
+          <h2 className="mb-4">
             {t("score")} : {match.length}
           </h2>
           <h2 className="mb-4">
@@ -42,7 +51,8 @@ export default function GameOver() {
           <button
             onClick={(evt) => router.push("/")}
             className={clsx(
-              "h-14 w-60 rounded-xl bg-red-700 text-center font-extrabold text-slate-50 hover:text-black xs:h-14 xs:w-60 xs:py-4 xs:text-lg md:h-20 md:w-1/2 md:py-6 md:text-2xl lg:h-14 lg:w-60  lg:py-4 lg:text-lg "
+              "h-14 w-60 rounded-xl bg-red-700 text-center font-extrabold text-slate-50 hover:text-black xs:h-14 xs:w-60 xs:py-4 xs:text-lg md:h-20 md:w-1/2 md:py-6 md:text-2xl lg:h-14 lg:w-60  lg:py-4 lg:text-lg ",
+              { "md:w-3/4": locale === "el" }
             )}
           >
             {t("tryAgain")}

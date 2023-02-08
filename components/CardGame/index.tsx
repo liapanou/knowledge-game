@@ -26,7 +26,6 @@ export function CardGame() {
             })}
             key={idx}
             onClick={function () {
-              if (settings.maxFlips < settings.flips) router.push(`/gameover`);
               // an einai monos
               if (settings.flips % 2 === 0)
                 settings.setFlipCard1({ idx: idx, srcf: c.srcf });
@@ -34,7 +33,7 @@ export function CardGame() {
             }}
           >
             <div
-              className="rounded-2xl xs:h-24 xs:w-20 md:h-40 md:w-32 lg:h-24 lg:w-28 xl:h-36 xl:w-28  2xl:h-40 2xl:w-36 "
+              className="rounded-2xl xs:h-24 xs:w-20 md:h-40 md:w-32 lg:h-20 lg:w-16 xl:h-32 xl:w-28  2xl:h-36 2xl:w-36 "
               onClick={() => {
                 if (!settings.muted) audio().play();
               }}

@@ -4,8 +4,8 @@ cssConfig = {};
 const nextConfig = {
   reactStrictMode: true,
   i18n: {
-    locales: ["el", "en"],
-    defaultLocale: "el",
+    locales: ["en", "el"],
+    defaultLocale: "en",
   },
 }
 

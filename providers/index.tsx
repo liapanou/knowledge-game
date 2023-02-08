@@ -225,6 +225,7 @@ type ContextType = {
   muted: boolean;
   level: Lvl;
   time?: number;
+  startingTime?: number;
   flips: number;
   matchesToWin: number;
   maxFlips: number;
@@ -241,14 +242,13 @@ type ContextType = {
   setFlipCard1: (flipCard1: { idx: number; srcf: string }) => void;
   setFlipCard2: (flipCard2: { idx: number; srcf: string }) => void;
   setTime: (time: number) => void;
-
-  setScore: (score: number) => void;
 };
 
 const defaultValue: ContextType = {
   muted: true,
   level: "easy",
   time: undefined,
+  startingTime: undefined,
   flips: 0,
   maxFlips: 60,
   matchesToWin: 3,
@@ -265,8 +265,6 @@ const defaultValue: ContextType = {
   setTime: (time: number) => {},
   setFlipCard1: (flipCard1: { idx: number; srcf: string }) => {},
   setFlipCard2: (flipCard2: { idx: number; srcf: string }) => {},
-
-  setScore: (score: number) => {},
 };
 
 const Context = createContext<ContextType>(defaultValue);
@@ -290,21 +288,21 @@ export function SettingsProvider(props: { children: ReactNode }) {
   function setLevel(level: Lvl) {
     const tmpState = { ...defaultValue };
     if (level === "easy") {
-      tmpState.time = 100;
+      tmpState.startingTime = 100;
       tmpState.maxFlips = 60;
       tmpState.matchesToWin = 3;
       tmpState.levelCards = animalCards;
     }
 
     if (level === "medium") {
-      tmpState.time = 60;
+      tmpState.startingTime = 60;
       tmpState.maxFlips = 50;
       tmpState.matchesToWin = 5;
       tmpState.levelCards = natureCards;
     }
 
     if (level === "hard") {
-      tmpState.time = 40;
+      tmpState.startingTime = 40;
       tmpState.maxFlips = 40;
       tmpState.matchesToWin = 6;
       tmpState.levelCards = landScapeCards;

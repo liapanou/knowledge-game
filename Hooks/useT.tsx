@@ -31,13 +31,13 @@ const translations: Record<Locale, Record<Key, string>> = {
     instructions: "Instructions",
     level: "Level",
     selectLevel: "Select Level",
-    easy: "Easy",
+    easy: "👶 Easy",
     ruleOfEasy:
       "You win if you find at least 3 pairs of images without exceeding the 60 flips and the 100 seconds",
-    medium: "Medium",
+    medium: "👦 Medium",
     ruleOfMedium:
       "You win if you find at least 5 pairs of images without exceeding the 50 flips and the 60 seconds",
-    hard: "Hard",
+    hard: "👨‍🦳 Hard",
     ruleOfHard:
       "You win if you find at least 6 pairs of images without exceeding the 40 flips and the 40 seconds",
     time: "Time",
@@ -56,13 +56,13 @@ const translations: Record<Locale, Record<Key, string>> = {
     instructions: "Οδηγίες",
     level: "Επίπεδο",
     selectLevel: "Επίλεξε Επίπεδο",
-    easy: "Εύκολο",
+    easy: "👶 Εύκολο",
     ruleOfEasy:
       "Κερδίζεις αν βρεις τουλάχιστον 3 ζεύγη εικόνων χωρίς να υπερβείς τα 60 γυρίσματα και τα 100 δευτερόλεπτα",
-    medium: "Μέτριο",
+    medium: "👦 Μέτριο",
     ruleOfMedium:
       "Κερδίζεις αν βρεις τουλάχιστον 5 ζεύγη εικόνων χωρίς να υπερβείς τα 50 γυρίσματα και τα 60 δευτερόλεπτα",
-    hard: "Δύσκολο",
+    hard: "👨‍🦳 Δύσκολο",
     ruleOfHard:
       "Κερδίζεις αν βρεις τουλάχιστον 6 ζεύγη εικόνων χωρίς να υπερβείς τα 40 γυρίσματα και τα 40 δευτερόλεπτα",
     time: "Χρόνος",

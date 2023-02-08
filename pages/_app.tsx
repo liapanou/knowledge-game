@@ -7,6 +7,12 @@ export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
   const { locale } = useRouter();
+  const getLang = () => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("lang") || undefined;
+    } else return locale;
+  };
+
   const setLang = (e: string) => {
     if (typeof window !== "undefined") localStorage.setItem("lang", e);
   };
@@ -14,7 +20,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <SettingsProvider>
       <select
-        value={locale}
+        value={getLang()}
         onChange={(evt) => {
           const locale = evt.currentTarget.value;
           router.replace(router.asPath, router.asPath, { locale });
