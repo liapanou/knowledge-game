@@ -15,7 +15,7 @@ export default function Game() {
   const t = useT();
 
   const [count, { startCountdown }] = useCountdown({
-    countStart: settings.time ?? 30,
+    countStart: settings.time ?? 100,
     // countStart: 5,
     intervalMs: 1000,
   });
@@ -65,12 +65,13 @@ export default function Game() {
                 </Link>
               </div>
 
-              <div className="flex items-center justify-center ">
+              <div className="flex flex-col items-center justify-center ">
                 <h1 className="text-shadow h-fit w-fit text-center font-extrabold text-yellow-300 xs:text-2xl md:text-4xl  lg:text-4xl xl:text-5xl  ">
                   Memory Game 🧠
                 </h1>
+                <br />
               </div>
-              <div className=" w-full">
+              <div className="flex w-full items-center">
                 <button
                   className={clsx(
                     "rounded-lg border bg-yellow-300 text-xl shadow xs:mr-1 xs:h-fit xs:w-fit md:ml-20 md:h-12 md:w-10 lg:h-fit  lg:w-fit",
@@ -88,7 +89,14 @@ export default function Game() {
             </div>
 
             <hr className="w-full opacity-40 xs:my-8 md:my-8 lg:my-3 2xl:my-8 "></hr>
-            <div className="grid h-full  w-full place-items-center xs:py-6 md:py-6 lg:py-3 2xl:py-6  ">
+            <div className="text-shadow  xs:text-md w-full  text-center  font-extrabold text-yellow-400 md:text-lg ">
+              {settings.level === "easy"
+                ? "👶 Easy"
+                : settings.level === "medium"
+                ? "👦 Medium"
+                : "👨‍🦳 Hard"}
+            </div>
+            <div className="grid h-full  w-full place-items-center   ">
               <div className="mb-4 grid grid-cols-3 ">
                 <div
                   className={clsx(
