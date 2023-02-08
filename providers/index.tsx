@@ -1,11 +1,9 @@
-import { match } from "assert";
 import { useRouter } from "next/router";
 import {
   createContext,
   ReactNode,
   useContext,
   useEffect,
-  useMemo,
   useRef,
   useState,
 } from "react";
@@ -211,85 +209,63 @@ const landScapeCards: { srcb: string; srcf: string }[] = [
   },
 ];
 
+type Card = {
+  srcb: string;
+  srcf: string;
+};
+type FlipCard = {
+  idx: number;
+  srcf: string;
+};
+const defaultCard = { srcb: "", srcf: "" };
+const defaultFlipCard = { idx: -1, srcf: "" };
+
 type Lvl = "easy" | "medium" | "hard";
 type ContextType = {
   muted: boolean;
   level: Lvl;
-  ltime?: number;
-  lflips: number;
-  lscores: number;
-  flipCard1: { idx: number; srcf: string };
-  flipCard2: { idx: number; srcf: string };
-  match: { srcf: string }[];
-  match1?: { srcf: string }[];
-  score: number;
-  scores: number;
-  animalCards: { srcb: string; srcf: string }[];
-  natureCards: { srcb: string; srcf: string }[];
-  landScapeCards: { srcb: string; srcf: string }[];
-  levelCards: { srcb: string; srcf: string }[];
-  clearCards: {
-    flipCard1: {
-      idx: number;
-      srcf: string;
-    };
-    flipCard2: {
-      idx: number;
-      srcf: string;
-    };
-  };
+  time?: number;
+  flips: number;
+  matchesToWin: number;
+  maxFlips: number;
+  flipCard1: FlipCard;
+  flipCard2: FlipCard;
+  match: string[];
+  animalCards: Card[];
+  natureCards: Card[];
+  landScapeCards: Card[];
+  levelCards: Card[];
+
   setMute: (muted: boolean) => void;
   setLevel: (level: Lvl) => void;
   setFlipCard1: (flipCard1: { idx: number; srcf: string }) => void;
   setFlipCard2: (flipCard2: { idx: number; srcf: string }) => void;
-  setMatchandScore: (
-    flipCard1: { idx: number; srcf: string },
-    flipCard2: { idx: number; srcf: string },
-    newMatch: { srcf: string },
-    score: number,
-    match: { srcf: string }[]
-  ) => void;
+  setTime: (time: number) => void;
+
   setScore: (score: number) => void;
 };
 
 const defaultValue: ContextType = {
   muted: true,
   level: "easy",
-  ltime: undefined,
-  lflips: 0,
-  lscores: 0,
-  flipCard1: { idx: -1, srcf: "" },
-  flipCard2: { idx: -1, srcf: "" },
-  match: [{ srcf: "" }],
-  match1: undefined,
-  score: 0,
-  scores: 0,
-  animalCards: [{ srcb: "", srcf: "" }],
-  natureCards: [{ srcb: "", srcf: "" }],
-  landScapeCards: [{ srcb: "", srcf: "" }],
-  levelCards: [{ srcb: "", srcf: "" }],
-  clearCards: {
-    flipCard1: {
-      idx: -1,
-      srcf: "",
-    },
-    flipCard2: {
-      idx: -1,
-      srcf: "",
-    },
-  },
+  time: undefined,
+  flips: 0,
+  maxFlips: 60,
+  matchesToWin: 3,
+  flipCard1: defaultFlipCard,
+  flipCard2: defaultFlipCard,
+  match: [],
+  animalCards: animalCards,
+  natureCards: natureCards,
+  landScapeCards: landScapeCards,
+  levelCards: animalCards,
 
   setMute: (muted: boolean) => {},
   setLevel: (level: Lvl) => {},
+  setTime: (time: number) => {},
   setFlipCard1: (flipCard1: { idx: number; srcf: string }) => {},
   setFlipCard2: (flipCard2: { idx: number; srcf: string }) => {},
-  setMatchandScore: (
-    flipCard1: { idx: number; srcf: string },
-    flipCard2: { idx: number; srcf: string },
-    newMatch: { srcf: string },
-    score: number,
-    match: { srcf: string }[]
-  ) => {},
+
   setScore: (score: number) => {},
 };
 
@@ -305,82 +281,59 @@ export function SettingsProvider(props: { children: ReactNode }) {
   function setMute(muted: boolean) {
     setState({ ...state, muted });
   }
+
   const clearCards = {
-    flipCard1: {
-      idx: -1,
-      srcf: "",
-    },
-    flipCard2: {
-      idx: -1,
-      srcf: "",
-    },
+    flipCard1: defaultFlipCard,
+    flipCard2: defaultFlipCard,
   };
+
   function setLevel(level: Lvl) {
-    let ltime = 600;
-    let lflips = 40;
-    let lscores = 6;
-    let levelCards = [{ srcb: "", srcf: "" }];
-    let scores = 0;
-    let match = [{ srcf: "" }];
-    let match1 = undefined;
-    if (level === "easy")
-      (ltime = 100),
-        (lflips = 60),
-        (lscores = 3),
-        (levelCards = animalCards),
-        clearCards,
-        scores,
-        match,
-        match1;
+    const tmpState = { ...defaultValue };
+    if (level === "easy") {
+      tmpState.time = 100;
+      tmpState.maxFlips = 60;
+      tmpState.matchesToWin = 3;
+      tmpState.levelCards = animalCards;
+    }
 
-    if (level === "medium")
-      (ltime = 60),
-        (lflips = 50),
-        (lscores = 5),
-        (levelCards = natureCards),
-        clearCards,
-        scores,
-        match,
-        match1;
+    if (level === "medium") {
+      tmpState.time = 60;
+      tmpState.maxFlips = 50;
+      tmpState.matchesToWin = 5;
+      tmpState.levelCards = natureCards;
+    }
 
-    if (level === "hard")
-      (ltime = 40),
-        (lflips = 40),
-        (lscores = 6),
-        (levelCards = landScapeCards),
-        clearCards,
-        scores,
-        match,
-        match1;
+    if (level === "hard") {
+      tmpState.time = 40;
+      tmpState.maxFlips = 40;
+      tmpState.matchesToWin = 6;
+      tmpState.levelCards = landScapeCards;
+    }
 
     setState({
-      ...state,
+      ...tmpState,
       level,
-      ltime,
-      lflips,
-      lscores,
-      levelCards,
-      clearCards,
-      scores,
-      match,
-      match1,
     });
   }
 
   function setFlipCard1(flipCard1: { idx: number; srcf: string }) {
-    setState({ ...state, ...clearCards, flipCard1 });
+    setState({ ...state, ...clearCards, flipCard1, flips: state.flips + 1 });
   }
 
-  function setFlipCard2(flipCard2: { idx: number; srcf: string }) {
-    setState({ ...state, flipCard2 });
+  const router = useRouter();
 
+  function setFlipCard2(flipCard2: { idx: number; srcf: string }) {
     if (state.flipCard1.srcf === flipCard2.srcf) {
       setState({
         ...state,
-        scores: state.score + 1,
-        match1: [...state.match, { srcf: flipCard2.srcf }],
+        flips: state.flips + 1,
+        match: [...state.match, flipCard2.srcf],
       });
-    }
+    } else setState({ ...state, flipCard2, flips: state.flips + 1 });
+  }
+
+  function setTime(time: number) {
+    setState({ ...state, time });
   }
 
   const ref = useRef<HTMLAudioElement>(null);
@@ -395,6 +348,7 @@ export function SettingsProvider(props: { children: ReactNode }) {
         ...state,
         setMute,
         setLevel,
+        setTime,
         setFlipCard1,
         setFlipCard2,
       }}

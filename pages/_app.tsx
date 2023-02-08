@@ -1,7 +1,7 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
-import { SettingsProvider, useSettings } from "../providers";
+import { SettingsProvider } from "../providers";
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -20,16 +20,16 @@ export default function App({ Component, pageProps }: AppProps) {
           router.replace(router.asPath, router.asPath, { locale });
           setLang(locale);
         }}
-        className="cursor-pointer bg-transparent  absolute z-50 top-0 left-0  text-center xs:text-lg md:text-2xl lg:text-lg appearance-none block xs:px-1 md:px-3 py-4 w-fit   text-black font-bold   border-white outline-none"
+        className="absolute top-0  left-0 z-50 block w-fit  cursor-pointer appearance-none border-white bg-transparent py-4 text-center font-bold text-black outline-none xs:px-1   xs:text-lg md:px-3   md:text-2xl lg:text-lg"
       >
         <option
-          className=" text-yellow-500  bg-black xs:text-lg md:text-2xl lg:text-lg  "
+          className=" bg-black  text-yellow-500 xs:text-lg md:text-2xl lg:text-lg  "
           value="en"
         >
           🇬🇧
         </option>
         <option
-          className="text-yellow-500  bg-black xs:text-lg md:text-2xl lg:text-lg  "
+          className="bg-black  text-yellow-500 xs:text-lg md:text-2xl lg:text-lg  "
           value="el"
         >
           🇬🇷
