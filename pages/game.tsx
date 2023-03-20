@@ -17,7 +17,7 @@ export default function Game() {
   const [count, { startCountdown }] = useCountdown({
     countStart: settings.startingTime ?? 100,
     intervalMs: 1000,
-  });
+  }); // counts reverse , which depends on the level
 
   // LOSE CRITERIA
   useEffect(() => {
@@ -80,7 +80,7 @@ export default function Game() {
                     }
                   )}
                   onClick={() => {
-                    settings.setMute(!settings.muted);
+                    settings.setMute(!settings.muted); // sets the sound
                   }}
                 >
                   🔊

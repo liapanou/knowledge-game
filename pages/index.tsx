@@ -10,7 +10,7 @@ export default function Home() {
   const mute = settings.muted;
   const audio = () => new Audio("/audio/click.mp3");
   const ref = useRef<HTMLInputElement>(null);
-  const t = useT();
+  const t = useT(); // passes to the component the translation function
 
   return (
     <div className=" h-screen w-screen overflow-hidden ">
@@ -53,7 +53,7 @@ export default function Home() {
 
             <button
               onClick={(evt) => {
-                evt.stopPropagation(); // stamataei na pernaei ta dedomena tou patera sto paidi
+                evt.stopPropagation(); // stops passing the data from the father to the kid
                 if (!settings.muted) audio().play();
                 if (!ref.current || ref.current?.checked === true) return;
                 if (ref.current?.checked === false) ref.current.checked = true;

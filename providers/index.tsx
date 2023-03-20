@@ -10,202 +10,202 @@ import {
 
 const animalCards: { srcb: string; srcf: string }[] = [
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/247502/pexels-photo-247502.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/animals/lion.jpeg",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/67552/giraffe-tall-mammal-africa-67552.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/animals/giraffe.jpeg",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/1661179/pexels-photo-1661179.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/animals/parrot.jpeg",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/47547/squirrel-animal-cute-rodents-47547.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/animals/squirrel.jpeg",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/47547/squirrel-animal-cute-rodents-47547.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/animals/squirrel.jpeg",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/635499/pexels-photo-635499.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/animals/horse.jpeg",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/39857/leopard-leopard-spots-animal-wild-39857.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/animals/leopard.jpeg",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/2295744/pexels-photo-2295744.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/animals/fox.jpeg",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/2295744/pexels-photo-2295744.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/animals/fox.jpeg",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/3608263/pexels-photo-3608263.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/animals/panda.jpeg",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/3608263/pexels-photo-3608263.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/animals/panda.jpeg",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/39857/leopard-leopard-spots-animal-wild-39857.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/animals/horse.jpeg",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/635499/pexels-photo-635499.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/animals/leopard.jpeg",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/1661179/pexels-photo-1661179.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/animals/parrot.jpeg",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/67552/giraffe-tall-mammal-africa-67552.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/animals/giraffe.jpeg",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/247502/pexels-photo-247502.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/animals/lion.jpeg",
   },
 ];
 
 const natureCards: { srcb: string; srcf: string }[] = [
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/1770809/pexels-photo-1770809.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/nature/park.jpeg",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/10714624/pexels-photo-10714624.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/nature/leopard-in-afrika.jpeg",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/10714624/pexels-photo-10714624.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/nature/leopard-in-afrika.jpeg",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/797793/pexels-photo-797793.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/nature/leaves.jpeg",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/797793/pexels-photo-797793.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/nature/leaves.jpeg",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/1142950/pexels-photo-1142950.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/nature/galaxy.jpeg",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/1142950/pexels-photo-1142950.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/nature/galaxy.jpeg",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/1131406/pexels-photo-1131406.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/nature/plants-and-butterfly.webp",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/1131406/pexels-photo-1131406.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/nature/plants-and-butterfly.webp",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/1693095/pexels-photo-1693095.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/nature/sky.jpeg",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/1693095/pexels-photo-1693095.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/nature/sky.jpeg",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/1894350/pexels-photo-1894350.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/nature/jellyfish.webp",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/1894350/pexels-photo-1894350.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/nature/jellyfish.webp",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/5282269/pexels-photo-5282269.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/nature/volcano.webp",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/5282269/pexels-photo-5282269.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/nature/volcano.webp",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/1770809/pexels-photo-1770809.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/nature/park.jpeg",
   },
 ];
 
 const landScapeCards: { srcb: string; srcf: string }[] = [
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/landscape/lake-and-mountains.jpeg",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/landscape/lake-and-mountains.jpeg",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/147411/italy-mountains-dawn-daybreak-147411.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/landscape/lakehouse.jpeg",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/147411/italy-mountains-dawn-daybreak-147411.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/landscape/lakehouse.jpeg",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/1624438/pexels-photo-1624438.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/landscape/mountains-with-stars.jpeg",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/1624438/pexels-photo-1624438.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/landscape/mountains-with-stars.jpeg",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/2365465/pexels-photo-2365465.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/landscape/matchu-pitchu.jpeg",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/2365465/pexels-photo-2365465.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/landscape/matchu-pitchu.jpeg",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/10344525/pexels-photo-10344525.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/landscape/lake-and-mountains2.jpeg",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/10344525/pexels-photo-10344525.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/landscape/lake-and-mountains2.jpeg",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/9899960/pexels-photo-9899960.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/landscape/cowboy-in-nature.jpeg",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/9899960/pexels-photo-9899960.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/landscape/cowboy-in-nature.jpeg",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/12273277/pexels-photo-12273277.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/landscape/volcano-eruption.jpeg",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/12273277/pexels-photo-12273277.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/landscape/volcano-eruption.jpeg",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/1933316/pexels-photo-1933316.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/landscape/sea-darksky-mountains.jpeg",
   },
   {
-    srcb: "https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=",
-    srcf: "https://images.pexels.com/photos/1933316/pexels-photo-1933316.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    srcb: "/images/game/pattern-card.jpg",
+    srcf: "/images/game/landscape/sea-darksky-mountains.jpeg",
   },
 ];
 
@@ -285,6 +285,8 @@ export function SettingsProvider(props: { children: ReactNode }) {
     flipCard2: defaultFlipCard,
   };
 
+  // sets the settings for every level
+
   function setLevel(level: Lvl) {
     const tmpState = { ...defaultValue };
     if (level === "easy") {
@@ -313,12 +315,15 @@ export function SettingsProvider(props: { children: ReactNode }) {
       level,
     });
   }
+  // clears the card's state , passes the  flipcard 1 to the card's state and increases the flips
 
   function setFlipCard1(flipCard1: { idx: number; srcf: string }) {
     setState({ ...state, ...clearCards, flipCard1, flips: state.flips + 1 });
   }
 
   const router = useRouter();
+
+  // passes the flipcard 2 to the card's state and increases the flips
 
   function setFlipCard2(flipCard2: { idx: number; srcf: string }) {
     if (state.flipCard1.srcf === flipCard2.srcf) {
@@ -351,7 +356,7 @@ export function SettingsProvider(props: { children: ReactNode }) {
         setFlipCard2,
       }}
     >
-      {/* otan einai muted true dn paizei otan einai muted false paizei */}
+      {/* when is muted true the music isn't playing , but when muted is false the music is playing */}
       {!state.muted && <audio ref={ref} autoPlay src="/audio/music.mp3" />}
 
       {props.children}

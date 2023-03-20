@@ -125,31 +125,12 @@ a {
   }
 }
 
-.card-back {
-  background-image: url("https://media.istockphoto.com/id/1135141898/vector/animal-pattern-leopard-seamless-background-with-spots.jpg?s=612x612&w=0&k=20&c=-EW27vds9fwyvAy2Jc9q6K0UQDJBc5ob_FvA47v1mYw=");
-  width: 144px ;
-  height : 160px;
-  
-}
-
-.card-front {
-  background-image: url("https://images.pexels.com/photos/247502/pexels-photo-247502.jpeg?auto=compress&cs=tinysrgb&w=1600");
-  width: 144px ;
-  height : 160px;
-}
-
 
 .bg-win {
-  background-image: url("https://wallpaperaccess.com/full/1169840.jpg");
+  background-image: url("/images/game/win.jpg");
 }
 
 .bg-lose{
-  background-image: url("http://www.academialeb.com/wp-content/uploads/2014/07/section-BG-dark.jpg");
+  background-image: url("/images/game/lose.jpg");
 
 }
-/* 
-.disable-click{
-  pointer-events: none;
-  cursor: default;
-  display: block;
-} */
