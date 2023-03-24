@@ -22,14 +22,15 @@ export function CardGame() {
               "pointer-events-none":
                 idx === settings.flipCard1.idx ||
                 idx === settings.flipCard2.idx ||
-                settings.match?.includes(c.srcf),
+                settings.match?.includes(c.name),
             })}
             key={idx}
             onClick={function () {
               // an einai monos
               if (settings.flips % 2 === 0)
-                settings.setFlipCard1({ idx: idx, srcf: c.srcf });
-              else settings.setFlipCard2({ idx: idx, srcf: c.srcf });
+                settings.setFlipCard1({ idx: idx, srcf: c.srcf, name: c.name });
+              else
+                settings.setFlipCard2({ idx: idx, srcf: c.srcf, name: c.name });
             }}
           >
             <div
@@ -40,12 +41,12 @@ export function CardGame() {
             >
               <picture>
                 <img
-                  className="h-full w-full select-none  object-fill "
+                  className="h-full w-full select-none  object-fill hover:cursor-pointer "
                   draggable={false}
                   src={
                     idx === settings.flipCard1.idx ||
                     idx === settings.flipCard2.idx ||
-                    settings.match.includes(c.srcf)
+                    settings.match.includes(c.name)
                       ? c.srcf
                       : c.srcb
                   }

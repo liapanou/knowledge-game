@@ -8,217 +8,267 @@ import {
   useState,
 } from "react";
 
-const animalCards: { srcb: string; srcf: string }[] = [
+const animalCards: { srcb: string; srcf: string; name: string }[] = [
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/animals/lion.jpeg",
+    name: "lion",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/animals/giraffe.jpeg",
+    name: "giraffe",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/animals/parrot.jpeg",
+    name: "parrot",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/animals/squirrel.jpeg",
+    name: "squirrel",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/animals/squirrel.jpeg",
+    name: "squirrel",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/animals/horse.jpeg",
+    name: "horse",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/animals/leopard.jpeg",
+    name: "leopard",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/animals/fox.jpeg",
+    name: "fox",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/animals/fox.jpeg",
+    name: "fox",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/animals/panda.jpeg",
+    name: "panda",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/animals/panda.jpeg",
+    name: "panda",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/animals/horse.jpeg",
+    name: "horse",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/animals/leopard.jpeg",
+    name: "leopard",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/animals/parrot.jpeg",
+    name: "parrot",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/animals/giraffe.jpeg",
+    name: "giraffe",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/animals/lion.jpeg",
+    name: "lion",
   },
 ];
 
-const natureCards: { srcb: string; srcf: string }[] = [
+const natureCards: { srcb: string; srcf: string; name: string }[] = [
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/nature/park.jpeg",
+    name: "park",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/nature/leopard-in-afrika.jpeg",
+    name: "leopard-in-afrika",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/nature/leopard-in-afrika.jpeg",
+    name: "leopard-in-afrika",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/nature/leaves.jpeg",
+    name: "leaves",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/nature/leaves.jpeg",
+    name: "leaves",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/nature/galaxy.jpeg",
+    name: "galaxy",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/nature/galaxy.jpeg",
+    name: "galaxy",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/nature/plants-and-butterfly.webp",
+    name: "plants-and-butterfly",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/nature/plants-and-butterfly.webp",
+    name: "plants-and-butterfly",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/nature/sky.jpeg",
+    name: "sky",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/nature/sky.jpeg",
+    name: "sky",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/nature/jellyfish.webp",
+    name: "jellyfish",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/nature/jellyfish.webp",
+    name: "jellyfish",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/nature/volcano.webp",
+    name: "volcano",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/nature/volcano.webp",
+    name: "volcano",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/nature/park.jpeg",
+    name: "park",
   },
 ];
 
-const landScapeCards: { srcb: string; srcf: string }[] = [
+const landScapeCards: { srcb: string; srcf: string; name: string }[] = [
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/landscape/lake-and-mountains.jpeg",
+    name: "lake-and-mountains",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/landscape/lake-and-mountains.jpeg",
+    name: "lake-and-mountains",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/landscape/lakehouse.jpeg",
+    name: "lakehouse",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/landscape/lakehouse.jpeg",
+    name: "lakehouse",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/landscape/mountains-with-stars.jpeg",
+    name: "mountains-with-stars",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/landscape/mountains-with-stars.jpeg",
+    name: "mountains-with-stars",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/landscape/matchu-pitchu.jpeg",
+    name: "matchu-pitchu",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/landscape/matchu-pitchu.jpeg",
+    name: "matchu-pitchu",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/landscape/lake-and-mountains2.jpeg",
+    name: "lake-and-mountains2",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/landscape/lake-and-mountains2.jpeg",
+    name: "lake-and-mountains2",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/landscape/cowboy-in-nature.jpeg",
+    name: "cowboy-in-nature",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/landscape/cowboy-in-nature.jpeg",
+    name: "cowboy-in-nature",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/landscape/volcano-eruption.jpeg",
+    name: "volcano-eruption",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/landscape/volcano-eruption.jpeg",
+    name: "volcano-eruption",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/landscape/sea-darksky-mountains.jpeg",
+    name: "sea-darksky-mountains",
   },
   {
     srcb: "/images/game/pattern-card.jpg",
     srcf: "/images/game/landscape/sea-darksky-mountains.jpeg",
+    name: "sea-darksky-mountains",
   },
 ];
 
 type Card = {
   srcb: string;
   srcf: string;
+  name: string;
 };
 type FlipCard = {
   idx: number;
   srcf: string;
+  name: string;
 };
-const defaultCard = { srcb: "", srcf: "" };
-const defaultFlipCard = { idx: -1, srcf: "" };
+const defaultCard = { srcb: "", srcf: "", name: "" };
+const defaultFlipCard = { idx: -1, srcf: "", name: "" };
 
 type Lvl = "easy" | "medium" | "hard";
 type ContextType = {
@@ -239,8 +289,16 @@ type ContextType = {
 
   setMute: (muted: boolean) => void;
   setLevel: (level: Lvl) => void;
-  setFlipCard1: (flipCard1: { idx: number; srcf: string }) => void;
-  setFlipCard2: (flipCard2: { idx: number; srcf: string }) => void;
+  setFlipCard1: (flipCard1: {
+    idx: number;
+    srcf: string;
+    name: string;
+  }) => void;
+  setFlipCard2: (flipCard2: {
+    idx: number;
+    srcf: string;
+    name: string;
+  }) => void;
   setTime: (time: number) => void;
 };
 
@@ -263,8 +321,8 @@ const defaultValue: ContextType = {
   setMute: (muted: boolean) => {},
   setLevel: (level: Lvl) => {},
   setTime: (time: number) => {},
-  setFlipCard1: (flipCard1: { idx: number; srcf: string }) => {},
-  setFlipCard2: (flipCard2: { idx: number; srcf: string }) => {},
+  setFlipCard1: (flipCard1: { idx: number; srcf: string; name: string }) => {},
+  setFlipCard2: (flipCard2: { idx: number; srcf: string; name: string }) => {},
 };
 
 const Context = createContext<ContextType>(defaultValue);
@@ -317,7 +375,11 @@ export function SettingsProvider(props: { children: ReactNode }) {
   }
   // clears the card's state , passes the  flipcard 1 to the card's state and increases the flips
 
-  function setFlipCard1(flipCard1: { idx: number; srcf: string }) {
+  function setFlipCard1(flipCard1: {
+    idx: number;
+    srcf: string;
+    name: string;
+  }) {
     setState({ ...state, ...clearCards, flipCard1, flips: state.flips + 1 });
   }
 
@@ -325,12 +387,16 @@ export function SettingsProvider(props: { children: ReactNode }) {
 
   // passes the flipcard 2 to the card's state and increases the flips
 
-  function setFlipCard2(flipCard2: { idx: number; srcf: string }) {
-    if (state.flipCard1.srcf === flipCard2.srcf) {
+  function setFlipCard2(flipCard2: {
+    idx: number;
+    srcf: string;
+    name: string;
+  }) {
+    if (state.flipCard1.name === flipCard2.name) {
       setState({
         ...state,
         flips: state.flips + 1,
-        match: [...state.match, flipCard2.srcf],
+        match: [...state.match, flipCard2.name],
       });
     } else setState({ ...state, flipCard2, flips: state.flips + 1 });
   }
