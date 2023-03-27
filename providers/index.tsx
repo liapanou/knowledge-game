@@ -8,321 +8,163 @@ import {
   useState,
 } from "react";
 
-const animalCards: { srcb: string; srcf: string; name: string }[] = [
+const culturalΗeritageCards: { src: string; name: string }[] = [
   {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/animals/lion.jpeg",
-    name: "lion",
+    src: "/images/game/culturalheritage/1-tzami.png",
+    name: "1",
   },
   {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/animals/giraffe.jpeg",
-    name: "giraffe",
+    src: "/images/game/culturalheritage/1-tourkokratia.png",
+    name: "1",
   },
   {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/animals/parrot.jpeg",
-    name: "parrot",
+    src: "/images/game/culturalheritage/2-monifaneromenis.jpg",
+    name: "2",
   },
   {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/animals/squirrel.jpeg",
-    name: "squirrel",
+    src: "/images/game/culturalheritage/2-apeleftherotikosagonas.png",
+    name: "2",
   },
   {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/animals/squirrel.jpeg",
-    name: "squirrel",
+    src: "/images/game/culturalheritage/3-gournies.png",
+    name: "3",
   },
   {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/animals/horse.jpeg",
-    name: "horse",
+    src: "/images/game/culturalheritage/3-pompiiatisminoikiskritis.png",
+    name: "3",
   },
   {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/animals/leopard.jpeg",
-    name: "leopard",
+    src: "/images/game/culturalheritage/4-limnimpramianon.jpg",
+    name: "4",
   },
   {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/animals/fox.jpeg",
-    name: "fox",
+    src: "/images/game/culturalheritage/4-prasinokefalipapia.png",
+    name: "4",
   },
   {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/animals/fox.jpeg",
-    name: "fox",
+    src: "/images/game/culturalheritage/5-dasakikoutsoura.jpg",
+    name: "5",
   },
   {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/animals/panda.jpeg",
-    name: "panda",
+    src: "/images/game/culturalheritage/5-faraggikokkinonpetaloudon.png",
+    name: "5",
   },
   {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/animals/panda.jpeg",
-    name: "panda",
+    src: "/images/game/culturalheritage/6-greenbg.jpg",
+    name: "6",
   },
   {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/animals/horse.jpeg",
-    name: "horse",
-  },
-  {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/animals/leopard.jpeg",
-    name: "leopard",
-  },
-  {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/animals/parrot.jpeg",
-    name: "parrot",
-  },
-  {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/animals/giraffe.jpeg",
-    name: "giraffe",
-  },
-  {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/animals/lion.jpeg",
-    name: "lion",
+    src: "/images/game/culturalheritage/6-green.jpg",
+    name: "6",
   },
 ];
 
-const natureCards: { srcb: string; srcf: string; name: string }[] = [
+const libraryContentCards: { src: string; name: string }[] = [
   {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/nature/park.jpeg",
-    name: "park",
+    src: "/images/game/librarycontent/14-taxidistokendrotisgis.png",
+    name: "14",
   },
   {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/nature/leopard-in-afrika.jpeg",
-    name: "leopard-in-afrika",
+    src: "/images/game/librarycontent/14-ivern.png",
+    name: "14",
   },
   {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/nature/leopard-in-afrika.jpeg",
-    name: "leopard-in-afrika",
+    src: "/images/game/librarycontent/10-stamistikatouvaltou.png",
+    name: "10",
   },
   {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/nature/leaves.jpeg",
-    name: "leaves",
+    src: "/images/game/librarycontent/10-pinelopidelta.png",
+    name: "10",
   },
   {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/nature/leaves.jpeg",
-    name: "leaves",
+    src: "/images/game/librarycontent/11-okoutsoflevaros.png",
+    name: "11",
   },
   {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/nature/galaxy.jpeg",
-    name: "galaxy",
+    src: "/images/game/librarycontent/11-andreaskarkavitsas.png",
+    name: "11",
   },
   {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/nature/galaxy.jpeg",
-    name: "galaxy",
+    src: "/images/game/librarycontent/12-olagoskaiixelona.png",
+    name: "12",
   },
   {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/nature/plants-and-butterfly.webp",
-    name: "plants-and-butterfly",
+    src: "/images/game/librarycontent/12-aisopos.png",
+    name: "12",
   },
   {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/nature/plants-and-butterfly.webp",
-    name: "plants-and-butterfly",
+    src: "/images/game/librarycontent/13-itosodoula.png",
+    name: "13",
   },
   {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/nature/sky.jpeg",
-    name: "sky",
+    src: "/images/game/librarycontent/13-hanscristianantersen.png",
+    name: "13",
   },
   {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/nature/sky.jpeg",
-    name: "sky",
+    src: "/images/game/librarycontent/15-redbg.jpg",
+    name: "15",
   },
   {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/nature/jellyfish.webp",
-    name: "jellyfish",
-  },
-  {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/nature/jellyfish.webp",
-    name: "jellyfish",
-  },
-  {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/nature/volcano.webp",
-    name: "volcano",
-  },
-  {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/nature/volcano.webp",
-    name: "volcano",
-  },
-  {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/nature/park.jpeg",
-    name: "park",
-  },
-];
-
-const landScapeCards: { srcb: string; srcf: string; name: string }[] = [
-  {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/landscape/lake-and-mountains.jpeg",
-    name: "lake-and-mountains",
-  },
-  {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/landscape/lake-and-mountains.jpeg",
-    name: "lake-and-mountains",
-  },
-  {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/landscape/lakehouse.jpeg",
-    name: "lakehouse",
-  },
-  {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/landscape/lakehouse.jpeg",
-    name: "lakehouse",
-  },
-  {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/landscape/mountains-with-stars.jpeg",
-    name: "mountains-with-stars",
-  },
-  {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/landscape/mountains-with-stars.jpeg",
-    name: "mountains-with-stars",
-  },
-  {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/landscape/matchu-pitchu.jpeg",
-    name: "matchu-pitchu",
-  },
-  {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/landscape/matchu-pitchu.jpeg",
-    name: "matchu-pitchu",
-  },
-  {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/landscape/lake-and-mountains2.jpeg",
-    name: "lake-and-mountains2",
-  },
-  {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/landscape/lake-and-mountains2.jpeg",
-    name: "lake-and-mountains2",
-  },
-  {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/landscape/cowboy-in-nature.jpeg",
-    name: "cowboy-in-nature",
-  },
-  {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/landscape/cowboy-in-nature.jpeg",
-    name: "cowboy-in-nature",
-  },
-  {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/landscape/volcano-eruption.jpeg",
-    name: "volcano-eruption",
-  },
-  {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/landscape/volcano-eruption.jpeg",
-    name: "volcano-eruption",
-  },
-  {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/landscape/sea-darksky-mountains.jpeg",
-    name: "sea-darksky-mountains",
-  },
-  {
-    srcb: "/images/game/pattern-card.jpg",
-    srcf: "/images/game/landscape/sea-darksky-mountains.jpeg",
-    name: "sea-darksky-mountains",
+    src: "/images/game/librarycontent/15-red.jpg",
+    name: "15",
   },
 ];
 
 type Card = {
-  srcb: string;
-  srcf: string;
+  src: string;
   name: string;
 };
 type FlipCard = {
   idx: number;
-  srcf: string;
+  src: string;
   name: string;
 };
-const defaultCard = { srcb: "", srcf: "", name: "" };
-const defaultFlipCard = { idx: -1, srcf: "", name: "" };
+const defaultCard = { src: "", name: "" };
+const defaultFlipCard = { idx: -1, src: "", name: "" };
 
-type Lvl = "easy" | "medium" | "hard";
+type Ctg = "culturalΗeritage" | "libraryContent";
 type ContextType = {
   muted: boolean;
-  level: Lvl;
+  category: Ctg;
   time?: number;
   startingTime?: number;
-  flips: number;
+  clicks: number;
   matchesToWin: number;
   maxFlips: number;
   flipCard1: FlipCard;
   flipCard2: FlipCard;
   match: string[];
-  animalCards: Card[];
-  natureCards: Card[];
-  landScapeCards: Card[];
-  levelCards: Card[];
+  culturalΗeritageCards: Card[];
+  libraryContentCards: Card[];
+  categoryCards: Card[];
 
   setMute: (muted: boolean) => void;
-  setLevel: (level: Lvl) => void;
-  setFlipCard1: (flipCard1: {
-    idx: number;
-    srcf: string;
-    name: string;
-  }) => void;
-  setFlipCard2: (flipCard2: {
-    idx: number;
-    srcf: string;
-    name: string;
-  }) => void;
+  setCategory: (category: Ctg) => void;
+  setFlipCard1: (flipCard1: { idx: number; src: string; name: string }) => void;
+  setFlipCard2: (flipCard2: { idx: number; src: string; name: string }) => void;
   setTime: (time: number) => void;
 };
 
 const defaultValue: ContextType = {
   muted: true,
-  level: "easy",
-  time: undefined,
+  category: "culturalΗeritage",
+  time: 80,
   startingTime: undefined,
-  flips: 0,
+  clicks: 0,
   maxFlips: 60,
-  matchesToWin: 3,
+  matchesToWin: 4,
   flipCard1: defaultFlipCard,
   flipCard2: defaultFlipCard,
   match: [],
-  animalCards: animalCards,
-  natureCards: natureCards,
-  landScapeCards: landScapeCards,
-  levelCards: animalCards,
+  culturalΗeritageCards: culturalΗeritageCards,
+  libraryContentCards: libraryContentCards,
+  categoryCards: culturalΗeritageCards,
 
   setMute: (muted: boolean) => {},
-  setLevel: (level: Lvl) => {},
+  setCategory: (category: Ctg) => {},
   setTime: (time: number) => {},
-  setFlipCard1: (flipCard1: { idx: number; srcf: string; name: string }) => {},
-  setFlipCard2: (flipCard2: { idx: number; srcf: string; name: string }) => {},
+  setFlipCard1: (flipCard1: { idx: number; src: string; name: string }) => {},
+  setFlipCard2: (flipCard2: { idx: number; src: string; name: string }) => {},
 };
 
 const Context = createContext<ContextType>(defaultValue);
@@ -343,62 +185,41 @@ export function SettingsProvider(props: { children: ReactNode }) {
     flipCard2: defaultFlipCard,
   };
 
-  // sets the settings for every level
-
-  function setLevel(level: Lvl) {
+  // sets the settings for easy level & every category
+  function setCategory(category: Ctg) {
     const tmpState = { ...defaultValue };
-    if (level === "easy") {
-      tmpState.startingTime = 100;
-      tmpState.maxFlips = 60;
-      tmpState.matchesToWin = 3;
-      tmpState.levelCards = animalCards;
-    }
 
-    if (level === "medium") {
-      tmpState.startingTime = 60;
-      tmpState.maxFlips = 50;
-      tmpState.matchesToWin = 5;
-      tmpState.levelCards = natureCards;
+    if (category === "culturalΗeritage") {
+      tmpState.categoryCards = culturalΗeritageCards;
     }
-
-    if (level === "hard") {
-      tmpState.startingTime = 40;
-      tmpState.maxFlips = 40;
-      tmpState.matchesToWin = 6;
-      tmpState.levelCards = landScapeCards;
+    if (category === "libraryContent") {
+      tmpState.categoryCards = libraryContentCards;
     }
 
     setState({
       ...tmpState,
-      level,
+      category,
     });
   }
-  // clears the card's state , passes the  flipcard 1 to the card's state and increases the flips
 
-  function setFlipCard1(flipCard1: {
-    idx: number;
-    srcf: string;
-    name: string;
-  }) {
-    setState({ ...state, ...clearCards, flipCard1, flips: state.flips + 1 });
+  // clears the card's state , passes the  flipcard 1 to the card's state and increases the clicks
+
+  function setFlipCard1(flipCard1: { idx: number; src: string; name: string }) {
+    setState({ ...state, ...clearCards, flipCard1, clicks: state.clicks + 1 });
   }
 
   const router = useRouter();
 
-  // passes the flipcard 2 to the card's state and increases the flips
+  // passes the flipcard 2 to the card's state and increases the clicks
 
-  function setFlipCard2(flipCard2: {
-    idx: number;
-    srcf: string;
-    name: string;
-  }) {
+  function setFlipCard2(flipCard2: { idx: number; src: string; name: string }) {
     if (state.flipCard1.name === flipCard2.name) {
       setState({
         ...state,
-        flips: state.flips + 1,
+        clicks: state.clicks + 1,
         match: [...state.match, flipCard2.name],
       });
-    } else setState({ ...state, flipCard2, flips: state.flips + 1 });
+    } else setState({ ...state, flipCard2, clicks: state.clicks + 1 });
   }
 
   function setTime(time: number) {
@@ -416,7 +237,7 @@ export function SettingsProvider(props: { children: ReactNode }) {
       value={{
         ...state,
         setMute,
-        setLevel,
+        setCategory,
         setTime,
         setFlipCard1,
         setFlipCard2,

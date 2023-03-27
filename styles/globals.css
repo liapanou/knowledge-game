@@ -134,3 +134,25 @@ a {
   background-image: url("/images/game/lose.jpg");
 
 }
+
+
+/* puts blinking attribute in the border of an element */
+
+.blinking-border {
+  border: 3px solid transparent;
+  border-radius: 0.2rem;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% {
+    
+    border-color: rgb(255, 235, 0 / var(--tw-border-opacity))
+  }
+  50% {
+    border-color: transparent;
+  }
+  100% {
+    border-color: rgb(255, 235, 0 / var(--tw-border-opacity))
+  }
+}

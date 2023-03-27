@@ -5,7 +5,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-export default function Level() {
+export default function Category() {
   const router = useRouter();
   const level = router.query.level as string;
   const settings = useSettings();
@@ -17,7 +17,7 @@ export default function Level() {
       <Head>
         <title>Memory Game</title>
       </Head>
-      <div className="h-full min-h-screen w-screen bg-teal-400 bg-gradient-to-r">
+      <div className="h-full min-h-screen w-screen bg-indigo-400 bg-gradient-to-r">
         <main className="xs:py-16 md:py-16 lg:py-8">
           <div className="grid xs:grid-cols-[100px_200px_120px] md:grid-cols-[200px_350px_220px] lg:grid-cols-[300px_400px_320px] xl:grid-cols-[300px_700px_320px] 2xl:grid-cols-[300px_1fr_320px]">
             <div className=" w-full">
@@ -32,7 +32,7 @@ export default function Level() {
 
             <div className="flex items-center justify-center  ">
               <h1 className="text-shadow flex h-fit w-fit text-center font-extrabold  text-yellow-300 xs:ml-0 xs:text-lg md:ml-9  md:text-4xl lg:ml-0   ">
-                {t("selectLevel")}
+                {t("selectCategory")}
               </h1>
             </div>
             <div className=" w-full">
@@ -56,36 +56,25 @@ export default function Level() {
           <div className="container mx-auto mt-20 grid  w-full grid-cols-1 place-items-center gap-4">
             <Link
               role="button"
-              className="text-shadow xl:h-30 flex transform  items-center justify-center rounded-md bg-teal-300 bg-gradient-to-tl text-center font-bold text-yellow-50 shadow-lg transition duration-100 hover:text-yellow-300 xs:h-24 xs:w-4/5 md:h-44 md:w-2/3 md:text-3xl lg:h-20 lg:w-1/2 lg:text-lg"
+              className="text-shadow xl:h-30 flex transform  items-center justify-center rounded-md bg-indigo-300 bg-gradient-to-tl text-center font-bold text-yellow-50 shadow-lg transition duration-100 hover:text-yellow-300 xs:h-24 xs:w-4/5 md:h-44 md:w-2/3 md:text-3xl lg:h-20 lg:w-1/2 lg:text-lg"
               href={`/game`}
               onClick={() => {
-                settings.setLevel("easy");
+                settings.setCategory("culturalΗeritage");
                 if (!settings.muted) audio().play();
               }}
             >
-              <button>{t("easy")}</button>
+              <button>{t("culturalΗeritage")}</button>
             </Link>
             <Link
               role="button"
-              className="text-shadow xl:h-30 flex transform  items-center justify-center  rounded-md bg-teal-300 bg-gradient-to-tl text-center font-bold text-yellow-50 shadow-lg transition duration-100 hover:text-yellow-300 xs:h-24 xs:w-4/5 md:h-44 md:w-2/3 md:text-3xl lg:h-20 lg:w-1/2 lg:text-lg"
+              className="text-shadow xl:h-30 flex transform  items-center justify-center  rounded-md bg-indigo-300 bg-gradient-to-tl text-center font-bold text-yellow-50 shadow-lg transition duration-100 hover:text-yellow-300 xs:h-24 xs:w-4/5 md:h-44 md:w-2/3 md:text-3xl lg:h-20 lg:w-1/2 lg:text-lg"
               href={`/game`}
               onClick={() => {
-                settings.setLevel("medium");
+                settings.setCategory("libraryContent");
                 if (!settings.muted) audio().play();
               }}
             >
-              <button>{t("medium")}</button>
-            </Link>
-            <Link
-              role="button"
-              className="text-shadow xl:h-30 flex transform  items-center justify-center  rounded-md bg-teal-300 bg-gradient-to-tl text-center font-bold text-yellow-50 shadow-lg transition duration-100 hover:text-yellow-300 xs:h-24 xs:w-4/5 md:h-44 md:w-2/3 md:text-3xl lg:h-20 lg:w-1/2 lg:text-lg"
-              href={`/game`}
-              onClick={() => {
-                settings.setLevel("hard");
-                if (!settings.muted) audio().play();
-              }}
-            >
-              <button>{t("hard")}</button>
+              <button>{t("libraryContent")}</button>
             </Link>
           </div>
         </main>

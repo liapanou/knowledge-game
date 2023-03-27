@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Win() {
   const settings = useSettings();
-  const { flips, match, time } = settings;
+  const { clicks, match, time } = settings;
   const t = useT();
 
   return (
@@ -23,18 +23,16 @@ export default function Win() {
 
               <div className="text-center font-extrabold text-yellow-500 xs:text-3xl md:text-5xl   ">
                 <h2 className="mb-4">
-                  {t("level")} :
-                  {settings.level === "easy"
-                    ? t("easy")
-                    : settings.level === "medium"
-                    ? t("medium")
-                    : t("hard")}
+                  {t("category")} :
+                  {settings.category === "culturalΗeritage"
+                    ? t("culturalΗeritage")
+                    : t("libraryContent")}
                 </h2>
                 <h2 className="mb-4">
                   {t("score")} : {match.length}
                 </h2>
                 <h2 className="mb-4">
-                  {t("flips")}: {flips}
+                  {t("clicks")}: {clicks}
                 </h2>
                 <h2>
                   {t("time")} : {time}
@@ -43,14 +41,16 @@ export default function Win() {
               <div className="flex items-center justify-center xs:mt-16 md:mt-20 lg:mt-6">
                 <Link
                   role="button"
-                  href={settings.level === "hard" ? "/" : `/game`}
+                  href="/game"
                   onClick={() => {
-                    if (settings.level === "easy") settings.setLevel("medium");
-                    if (settings.level === "medium") settings.setLevel("hard");
+                    if (settings.category === "culturalΗeritage")
+                      settings.setCategory("libraryContent");
+                    if (settings.category === "libraryContent")
+                      settings.setCategory("culturalΗeritage");
                   }}
                   className="rounded-xl bg-yellow-500 text-center font-extrabold text-slate-50 hover:text-black xs:h-14 xs:w-60 xs:py-4 xs:text-lg md:h-20 md:w-1/2 md:py-6 md:text-2xl lg:h-14 lg:w-60 lg:py-4 lg:text-lg "
                 >
-                  {settings.level === "hard" ? t("home") : t("nextLevel")}
+                  {t("nextCategory")}
                 </Link>
               </div>
             </div>

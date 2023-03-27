@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 export default function GameOver() {
   const settings = useSettings();
   const router = useRouter();
-  const { flips, match, time } = settings;
+  const { clicks, match, time } = settings;
   const { locale } = useRouter();
   const t = useT();
   return (
@@ -30,18 +30,16 @@ export default function GameOver() {
           )}
         >
           <h2 className="mb-4">
-            {t("level")} :
-            {settings.level === "easy"
-              ? t("easy")
-              : settings.level === "medium"
-              ? t("medium")
-              : t("hard")}
+            {t("category")} :
+            {settings.category === "culturalΗeritage"
+              ? t("culturalΗeritage")
+              : t("libraryContent")}
           </h2>
           <h2 className="mb-4">
             {t("score")} : {match.length}
           </h2>
           <h2 className="mb-4">
-            {t("flips")} : {flips}
+            {t("clicks")} : {clicks}
           </h2>
           <h2>
             {t("time")} : {time}
