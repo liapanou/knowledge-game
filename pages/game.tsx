@@ -15,18 +15,18 @@ export default function Game() {
   const t = useT();
 
   const [count, { startCountdown }] = useCountdown({
-    countStart: settings.startingTime ?? 100,
+    countStart: settings.startingTime,
     intervalMs: 1000,
   }); // counts reverse , which depends on the level
 
   // LOSE CRITERIA
   useEffect(() => {
-    if (settings.clicks > settings.maxFlips) {
+    if (settings.clicks > settings.maxClicks) {
       settings.setTime(count);
       router.push(`/gameover`);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [settings.clicks, settings.maxFlips, router, count]);
+  }, [settings.clicks, settings.maxClicks, router, count]);
 
   useEffect(() => {
     if (count === 0) {
@@ -146,5 +146,3 @@ export default function Game() {
     </div>
   );
 }
-
-// className=}

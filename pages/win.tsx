@@ -22,7 +22,7 @@ export default function Win() {
               </h1>
 
               <div className="text-center font-extrabold text-yellow-500 xs:text-3xl md:text-5xl   ">
-                <h2 className="mb-4">
+                <h2 className="mb-4 xs:text-2xl md:text-4xl lg:text-5xl">
                   {t("category")} :
                   {settings.category === "culturalΗeritage"
                     ? t("culturalΗeritage")

@@ -126,11 +126,11 @@ type Ctg = "culturalΗeritage" | "libraryContent";
 type ContextType = {
   muted: boolean;
   category: Ctg;
-  time?: number;
-  startingTime?: number;
+  time: number;
+  startingTime: number;
   clicks: number;
   matchesToWin: number;
-  maxFlips: number;
+  maxClicks: number;
   flipCard1: FlipCard;
   flipCard2: FlipCard;
   match: string[];
@@ -148,10 +148,10 @@ type ContextType = {
 const defaultValue: ContextType = {
   muted: true,
   category: "culturalΗeritage",
-  time: 80,
-  startingTime: undefined,
+  time: 90,
+  startingTime: 90,
   clicks: 0,
-  maxFlips: 60,
+  maxClicks: 60,
   matchesToWin: 4,
   flipCard1: defaultFlipCard,
   flipCard2: defaultFlipCard,

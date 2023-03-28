@@ -46,7 +46,7 @@ export function CardGame() {
                 },
                 {
                   "opacity-50": settings.match?.includes(c.name),
-                }
+                } // makes gray the cards who are matched
               )}
             >
               <picture>

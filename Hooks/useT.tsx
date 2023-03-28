@@ -32,7 +32,7 @@ const translations: Record<Locale, Record<Key, string>> = {
     selectCategory: "Select Category",
     culturalΗeritage: "🏺 Cultural Ηeritage",
     ruleOfEasy:
-      "You win if you find at least 4 pairs of images without exceeding the 60 clicks and the 80 seconds",
+      "You win if you find at least 4 pairs of images without exceeding the 60 clicks and the 90 seconds",
     adviceToWin:
       "The are two knowledge categories which you can choose from. You should pich those whose you are good at !",
     existingCategories: "The existing categories for selection are :",
@@ -55,7 +55,7 @@ const translations: Record<Locale, Record<Key, string>> = {
     selectCategory: "Επίλεξε Κατηγορία",
     culturalΗeritage: "🏺 Πολιτιστική Κληρονομιά",
     ruleOfEasy:
-      "Κερδίζεις αν βρεις τουλάχιστον 4 ζεύγη εικόνων χωρίς να υπερβείς τα 60 πατήματα και τα 80 δευτερόλεπτα",
+      "Κερδίζεις αν βρεις τουλάχιστον 4 ζεύγη εικόνων χωρίς να υπερβείς τα 60 πατήματα και τα 90 δευτερόλεπτα",
     adviceToWin:
       "Υπάρχουν 2 κατηγορίες γνώσεων από τις οποίες μπορείς να διαλέξεις. Καλύτερα να επιλέξεις εκείνες τις οποίες γνωρίζεις καλύτερα!",
     existingCategories: "Οι υπάρχουσες κατηγορίες για επιλογή είναι :",
