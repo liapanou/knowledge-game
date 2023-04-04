@@ -231,6 +231,12 @@ export function SettingsProvider(props: { children: ReactNode }) {
   useEffect(() => {
     if (ref.current) ref.current.volume = 0.1;
   }, [state.muted]);
+  // let s = (e) => {
+  //   setSound(e);
+  //   setTimeiout(() => {
+  //     MediaStreamAudioSourceNode("0000000000000000");
+  //   });
+  // };
 
   return (
     <Context.Provider
@@ -245,6 +251,8 @@ export function SettingsProvider(props: { children: ReactNode }) {
     >
       {/* when is muted true the music isn't playing , but when muted is false the music is playing */}
       {!state.muted && <audio ref={ref} autoPlay src="/audio/music.mp3" />}
+
+      {/* <audio autoPlay src={sound} /> */}
 
       {props.children}
     </Context.Provider>
