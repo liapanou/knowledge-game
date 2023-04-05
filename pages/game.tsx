@@ -13,6 +13,10 @@ export default function Game() {
   const { locale } = useRouter();
   const settings = useSettings();
   const t = useT();
+  const audioendoftime = () => new Audio("/audio/end-of-time.mp3");
+  const audioformatch = () => new Audio("/audio/correct.mp3");
+  const audioformistake = () => new Audio("/audio/wrong.mp3");
+
 
   const [count, { startCountdown }] = useCountdown({
     countStart: settings.startingTime,
@@ -45,6 +49,29 @@ export default function Game() {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [count, settings.match.length, settings.matchesToWin, router]);
+  
+   // sets the audio when the time is over
+  useEffect(() => {
+    if (!settings.muted && count === 1) audioendoftime().play();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [count]);
+
+  // sets the audio when you find a match
+  useEffect(() => {
+    if (!settings.muted) audioformatch().play();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [settings.match.length]);
+
+  // sets the audio when you make a mistake with matching
+  useEffect(() => {
+    if (
+      !settings.muted &&
+      settings.flipCard1.name !== settings.flipCard2.name &&
+      settings.flipCard2.idx !== -1
+    )
+      audioformistake().play();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [settings.flipCard1, settings.flipCard2]);
 
   return (
     <div className=" h-screen w-screen overflow-hidden">
