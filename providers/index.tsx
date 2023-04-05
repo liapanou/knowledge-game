@@ -218,6 +218,7 @@ export function SettingsProvider(props: { children: ReactNode }) {
         ...state,
         clicks: state.clicks + 1,
         match: [...state.match, flipCard2.name],
+        ...clearCards,
       });
     } else setState({ ...state, flipCard2, clicks: state.clicks + 1 });
   }
@@ -231,12 +232,7 @@ export function SettingsProvider(props: { children: ReactNode }) {
   useEffect(() => {
     if (ref.current) ref.current.volume = 0.1;
   }, [state.muted]);
-  // let s = (e) => {
-  //   setSound(e);
-  //   setTimeiout(() => {
-  //     MediaStreamAudioSourceNode("0000000000000000");
-  //   });
-  // };
+  
 
   return (
     <Context.Provider
