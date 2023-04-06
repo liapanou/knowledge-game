@@ -80,3 +80,5 @@ export function useT() {
       : translations[locale][key];
   return t;
 }
+
+// sets the translation attribute to the app - you should also look at the app & document page and at the next.config.js
