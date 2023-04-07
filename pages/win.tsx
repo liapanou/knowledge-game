@@ -2,11 +2,22 @@ import { useT } from "@/Hooks/useT";
 import { useSettings } from "@/providers";
 import Head from "next/head";
 import Link from "next/link";
+import { useEffect } from "react";
 
 export default function Win() {
   const settings = useSettings();
   const { clicks, match, time } = settings;
   const t = useT();
+  const audioforsuccess = () => new Audio("/audio/success.mp3");
+
+  // sets the audio for wining the game
+  useEffect(
+    () => {
+      audioforsuccess().play();
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  );
 
   return (
     <div className=" h-screen w-screen overflow-hidden ">
