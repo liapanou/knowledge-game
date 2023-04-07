@@ -12,7 +12,7 @@ export function CardGame() {
     [settings.categoryCards]
   );
 
-  const audio = () => new Audio("/audio/click.mp3");
+  const audio = () => new Audio("/audio/click.wav");
   return (
     <div className="grid select-none grid-cols-4  gap-3">
       {suffledLevelCards.map((c, idx) => {
