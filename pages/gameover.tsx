@@ -2,6 +2,7 @@ import { useT } from "@/Hooks/useT";
 import { useSettings } from "@/providers";
 import clsx from "clsx";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 export default function GameOver() {
   const settings = useSettings();
@@ -9,6 +10,18 @@ export default function GameOver() {
   const { clicks, match, time } = settings;
   const { locale } = useRouter();
   const t = useT();
+   const audioforlost = () =>
+    new Audio("/audio/no-luck-too-bad-disappointing-sound-effect-112943.mp3");
+
+  // sets the audio for losing the game
+  useEffect(
+    () => {
+      audioforlost().play();
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  );
+  
   return (
     <div
       className={clsx(
